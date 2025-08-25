@@ -143,7 +143,15 @@ end;
 
 procedure Tmysql_database_backup.FormShow(Sender: TObject);
 begin
-    mysql_database_backup.Caption := US_MYMAR_TXT + ' Database Backup'; // MySQL Database Backup
+    // 汉化界面
+    mysql_database_backup.Caption := US_MYMAR_TXT + ' 数据库备份';
+    GroupBox1.Caption := '选择要备份的数据库';
+    GroupBox2.Caption := '输入备份文件名';
+    Btn_clear.Caption := '清除';
+    Btn_help.Caption := '帮助';
+    Btn_create_backup.Caption := '创建备份';
+    ChB_display_all.Caption := '显示所有数据库';
+    
     mysql_database_backup_init; // Set initial conditions
     display_databases;          //Display list of databases in ListBox1
 end;
@@ -172,7 +180,7 @@ begin
   str := str +  'such as mysql and phpmyadmin these are normally hidden.'  + sLineBreak;
   str := str +  'Default is to display only user created databases.'       + sLineBreak+ sLineBreak;
 
-  us_MessageDlg('Create a '+US_MYMAR_TXT+' database backup - Help ', str, mtInformation,[mbOk],0) ; //Display message
+  us_MessageDlg('创建 '+US_MYMAR_TXT+' 数据库备份 - 帮助 ', str, mtInformation,[mbOk],0) ; //Display message
 end;
 
 procedure Tmysql_database_backup.Btn_create_backupClick(Sender: TObject);

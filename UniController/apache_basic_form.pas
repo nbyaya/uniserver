@@ -67,6 +67,20 @@ var
   RegexObj: TRegExpr;   // Object
   i:integer;            // loop counter
 begin
+  // 汉化界面
+  Caption := 'Apache 基本配置';
+  GroupBox1.Caption := '常用配置参数';
+  Lbl_server_name.Caption := '服务器名称';
+  Llb_email.Caption := '服务器管理员邮箱';
+  Lbl_index_files.Caption := '目录索引文件';
+  Lbl_ssi.Caption := '服务器端包含';
+  Lbl_server_signature.Caption := '服务器签名';
+  Lbl_listen_port.Caption := '监听端口';
+  Label1.Caption := 'Lua 模块';
+  Label2.Caption := 'pLua 模块';
+  Btn_update_config.Caption := '更新配置';
+  Btn_help.Caption := '帮助';
+
   //=== Get data from environment variables
 
     //-- Get Server name
@@ -172,11 +186,11 @@ var
 begin
   //str_ab_help_title = Basic Apache Configuration
   str :='';
-  str := str + 'This form allows you to change commonly configured' + sLineBreak;
-  str := str + 'Apache options.' + sLineBreak + sLineBreak;
-  str := str + 'To edit other Apache options, select edit httpd.conf' + sLineBreak;
-  str := str + 'from the Controller menu. ' + sLineBreak;
-  us_MessageDlg('Basic Apache Configuration', str, mtInformation,[mbOk],0) ; //Display message
+  str := str + '此表单允许您更改常用的' + sLineBreak;
+  str := str + 'Apache 配置选项。' + sLineBreak + sLineBreak;
+  str := str + '要编辑其他 Apache 选项，请从控制器菜单中' + sLineBreak;
+  str := str + '选择编辑 httpd.conf。' + sLineBreak;
+  us_MessageDlg('Apache 基本配置', str, mtInformation,[mbOk],0) ; //Display message
 end;
 
 procedure Tapache_basic.Btn_update_configClick(Sender: TObject);
@@ -193,22 +207,22 @@ begin
  //==Check data entered by user - Validate user input===
 
    //--Check domain name (server name) looks resonable e.g fred.com
-   If Not valid_server_name(Edit_server_name.Text,'Server Name')     Then valid_input := False;
+   If Not valid_server_name(Edit_server_name.Text,'服务器名称')     Then valid_input := False;
 
    //--Check Server port - standard port 80
-   If Not valid_server_port(Editl_listen_port.Text,'Server port')    Then valid_input := False;
+   If Not valid_server_port(Editl_listen_port.Text,'服务器端口')    Then valid_input := False;
 
    //--Check Admin E-mail for correct format
-   If Not valid_admin_email(Edit_email.Text,'Admin E-mail')          Then valid_input := False;
+   If Not valid_admin_email(Edit_email.Text,'管理员邮箱')          Then valid_input := False;
 
    //--Check Directory index files for correct format
-   If Not valid_directory_index_files(Edit_index_files.Text,'Directory index list') Then valid_input := False;
+   If Not valid_directory_index_files(Edit_index_files.Text,'目录索引文件列表') Then valid_input := False;
 
    //--Check Server parsed ssi file extensions for correct format
-   If Not valid_ssi_file_extensions(Edit_ssi.Text,'SSI file extensions') Then valid_input := False;
+   If Not valid_ssi_file_extensions(Edit_ssi.Text,'SSI 文件扩展名') Then valid_input := False;
 
    //--Check Server Signature On/Off
-   If Not valid_server_signature(Com_server_signature.Text,'Server Signature') Then valid_input := False;
+   If Not valid_server_signature(Com_server_signature.Text,'服务器签名') Then valid_input := False;
 
   //==Valid input update configuration===
   If valid_input Then
@@ -323,7 +337,7 @@ begin
    end;//End FileExists(USF_APACHE_DEFAULT_CNF)
 
    //Inform user
-   us_MessageDlg('Apache Configuration', 'Apache Configuration files updated', mtInformation,[mbOk],0) ; //Display message
+   us_MessageDlg('Apache 配置', 'Apache 配置文件已更新', mtInformation,[mbOk],0) ; //Display message
 
    //Close form
    If valid_input Then apache_basic.Close;

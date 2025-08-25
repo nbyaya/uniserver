@@ -189,24 +189,24 @@ begin
       //=== Ask user to confirm root folder deletion
 
       str := '';
-      str := str +  'The Vhost was deleted.'+ sLineBreak+ sLineBreak;
+      str := str +  '虚拟主机已被删除。'+ sLineBreak+ sLineBreak;
 
-      str := str +  'Note: The Vhost root folder was not deleted!' + sLineBreak + sLineBreak;
+      str := str +  '注意：虚拟主机根文件夹未被删除！' + sLineBreak + sLineBreak;
 
-      str := str +  'Would you like to delete the root folder and all its content:' + sLineBreak;
+      str := str +  '您是否要删除根文件夹及其所有内容：' + sLineBreak;
       str := str +  Out_root_folder + sLineBreak + sLineBreak;
 
-      str := str +  'To delete root folder Click Yes ' ;
+      str := str +  '要删除根文件夹请点击是 ' ;
 
-      if us_MessageDlg('VHost Deleted', str, mtConfirmation,[mbYes, mbNo],0) = mrYes then
+      if us_MessageDlg('虚拟主机已删除', str, mtConfirmation,[mbYes, mbNo],0) = mrYes then
          DeleteDirectoryEx(Out_root_folder);   // Delete root folder
 
-      us_MessageDlg('Apache Info','VHost root folder was deleted', mtcustom,[mbOk],0) ; //Display information message
+      us_MessageDlg('Apache 信息','虚拟主机根文件夹已被删除', mtcustom,[mbOk],0) ; //Display information message
       vhost_delete.Close;                      // Close form
 
      end
   Else // No item selected
-      us_MessageDlg('Warning','No selection!', mtWarning,[mbOk],0) ; //Display warning message
+      us_MessageDlg('警告','未选择任何项目！', mtWarning,[mbOk],0) ; //Display warning message
 end;
 
 procedure Tvhost_delete.Btn_cancel_selectionClick(Sender: TObject);
@@ -222,6 +222,12 @@ end;
 
 procedure Tvhost_delete.FormShow(Sender: TObject);
 begin
+  // 汉化界面
+  Caption := '删除 Apache 虚拟主机';
+  Label1.Caption := '选择要删除的虚拟主机：';
+  Btn_delete_vhost.Caption := '删除虚拟主机';
+  Btn_cancel_selection.Caption := '取消选择';
+  
   set_initial_state; // Get and display host entries
 end;
 

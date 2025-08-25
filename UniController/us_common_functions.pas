@@ -431,10 +431,10 @@ function us_get_new_port(old_port:string;var new_port:string;standard:string): b
   valid_input := False;    // Assume input is invalid or cancelled
 
   //Set text to use
-  port_title  := ' Server Port - current value '+ old_port;
-  port_text   := ' Enter new server port or press cancel: (standard port '+standard+')';
-  s1 := ' Invalid port! ';
-  s3 := sLineBreak + sLineBreak +' Please enter a valid server port or press cancel:';
+  port_title  := ' 服务器端口 - 当前值 '+ old_port;
+  port_text   := ' 输入新的服务器端口或按取消: (标准端口 '+standard+')';
+  s1 := ' 无效端口! ';
+  s3 := sLineBreak + sLineBreak +' 请输入有效的服务器端口或按取消:';
 
   while Not valid_input do
    begin
@@ -447,10 +447,10 @@ function us_get_new_port(old_port:string;var new_port:string;standard:string): b
 
        If valid_input then
         begin
-          If Not valid_server_port(UserStr,'Server port') Then
+          If Not valid_server_port(UserStr,'服务器端口') Then
            begin
             valid_input := False;
-            s2 := ' This port already in use by this server.';
+            s2 := ' 此端口已被此服务器使用。';
             port_text := s1 + s3;
            end;
         end;
@@ -461,7 +461,7 @@ function us_get_new_port(old_port:string;var new_port:string;standard:string): b
            If (UserStr =UENV_AP_PORT) or (UserStr = UENV_AP_SSL_PORT) or (UserStr =UENV_MYSQL_TCP_PORT)  Then
             begin
              valid_input := False;
-             s2 := ' This port already in use by this server.';
+             s2 := ' 此端口已被此服务器使用。';
              port_text := s1 + s2 + s3;
             end;
         end;
@@ -1067,10 +1067,10 @@ function us_get_new_pwd(old_pwd:string;var new_pwd:string): boolean;
   valid_input := False;    // Assume input is invalid or cancelled
 
   //Set text to use
-  pwd_title   := US_MYMAR_TXT+' root password - current value '+ old_pwd;
-  pwd_text    := ' Enter new '+US_MYMAR_TXT+' root password or press cancel:';
-  s1 := ' Invalid password! ';
-  s3 := sLineBreak + sLineBreak +' Please enter a valid password or press cancel:';
+  pwd_title   := US_MYMAR_TXT+' root 密码 - 当前值 '+ old_pwd;
+  pwd_text    := ' 输入新的 '+US_MYMAR_TXT+' root 密码或按取消：';
+  s1 := ' 无效密码！ ';
+  s3 := sLineBreak + sLineBreak +' 请输入有效密码或按取消：';
 
   while Not valid_input do
    begin
@@ -1086,7 +1086,7 @@ function us_get_new_pwd(old_pwd:string;var new_pwd:string): boolean;
            If UserStr = '' Then
              begin
                valid_input := False;
-               s2 := ' Cannot be blank.';
+               s2 := ' 不能为空。';
                pwd_text := s1 + s2 + s3;
              end;
         end;
@@ -1097,7 +1097,7 @@ function us_get_new_pwd(old_pwd:string;var new_pwd:string): boolean;
            If ExecRegExpr('^.*\s.*$', UserStr) Then
              begin
                valid_input := False;
-               s2 := ' Cannot contain a space.';
+               s2 := ' 不能包含空格。';
                pwd_text := s1 + s2 + s3;
              end;
         end;
@@ -1110,8 +1110,8 @@ function us_get_new_pwd(old_pwd:string;var new_pwd:string): boolean;
            If Not ExecRegExpr('^[\x21-\x7E]*$', UserStr) Then
              begin
                valid_input := False;
-               s2 := sLineBreak + ' Valid characters: Any printable character excluding' + sLineBreak;
-               s2 :=         s2 + ' space, quotes and some special characters.';
+               s2 := sLineBreak + ' 有效字符：任何可打印字符，但不包括' + sLineBreak;
+               s2 :=         s2 + ' 空格、引号和一些特殊字符。';
                pwd_text := s1 + s2 + s3;
              end;
         end;
@@ -1122,7 +1122,7 @@ function us_get_new_pwd(old_pwd:string;var new_pwd:string): boolean;
            If Length(UserStr) > 41 Then
             begin
              valid_input := False;
-             s2 := ' Maximum number of characters is 41';
+             s2 := ' 最大字符数为 41';
              pwd_text := s1 + s2 + s3;
             end;
         end;
@@ -1480,7 +1480,7 @@ function valid_server_port(server_port:string;display_str:string): boolean;
     begin
       valid_input := False;
       SysUtils.Beep; // Alert user
-      us_MessageDlg('Error',display_str + ':' + sLineBreak + 'Cannot be blank.', mtError,[mbOk],0) ; //Display error message
+      us_MessageDlg('错误',display_str + ':' + sLineBreak + '不能为空。', mtError,[mbOk],0) ; //Display error message
     end;
 
   //-- Check for a space
@@ -1490,7 +1490,7 @@ function valid_server_port(server_port:string;display_str:string): boolean;
        begin
          valid_input := False;
          SysUtils.Beep; // Alert user
-         us_MessageDlg('Error',display_str + ':' + sLineBreak + 'Cannot contain a space.', mtError,[mbOk],0) ; //Display error message
+         us_MessageDlg('错误',display_str + ':' + sLineBreak + '不能包含空格。', mtError,[mbOk],0) ; //Display error message
        end;
     end;
 
@@ -1501,7 +1501,7 @@ function valid_server_port(server_port:string;display_str:string): boolean;
         begin
           valid_input := False;
           SysUtils.Beep; // Alert user
-          us_MessageDlg('Error',display_str + ':' + sLineBreak + 'Only digits 0-9 allowed.', mtError,[mbOk],0) ; //Display error message
+          us_MessageDlg('错误',display_str + ':' + sLineBreak + '只允许数字 0-9。', mtError,[mbOk],0) ; //Display error message
         end;
    end;
 
@@ -1511,7 +1511,7 @@ function valid_server_port(server_port:string;display_str:string): boolean;
       If Length(server_port) > 5 Then
        begin
         valid_input := False;
-         us_MessageDlg('Error',display_str + ':' + sLineBreak + 'Only 5 digits allowed 0-65535', mtError,[mbOk],0) ; //Display error message
+         us_MessageDlg('错误',display_str + ':' + sLineBreak + '只允许5位数字 0-65535', mtError,[mbOk],0) ; //Display error message
        end;
    end;
 
@@ -1521,7 +1521,7 @@ function valid_server_port(server_port:string;display_str:string): boolean;
       If StrToInt(server_port) > 65535 Then
        begin
         valid_input := False;
-        us_MessageDlg('Error',display_str + ':' + sLineBreak + 'Valid port values 0-65535', mtError,[mbOk],0) ; //Display error message
+        us_MessageDlg('错误',display_str + ':' + sLineBreak + '有效端口值 0-65535', mtError,[mbOk],0) ; //Display error message
        end;
    end;
 
@@ -1558,7 +1558,7 @@ function valid_admin_email(admin_email:string;display_str:string): boolean;
        begin
          valid_input := False;
          SysUtils.Beep; // Alert user
-        us_MessageDlg('Error',display_str + ':' + sLineBreak + 'Cannot contain a space.', mtError,[mbOk],0) ; //Display error message
+        us_MessageDlg('错误',display_str + ':' + sLineBreak + '不能包含空格。', mtError,[mbOk],0) ; //Display error message
        end;
     end;
 

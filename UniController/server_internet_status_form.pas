@@ -130,7 +130,7 @@ begin
     //IP address
     If get_ip_address(ip)
     Then str1 := ip
-    Else str1 := 'Unable to obtain ip information';
+    Else str1 := '无法获取IP信息';
 
     Synchronize( @proc1 );
     sleep(1000);
@@ -143,8 +143,8 @@ begin
    begin
      //Server accessible
      If server_accessible_from_internet
-     Then str2 := 'Accessible from internet'
-     Else str2 := 'Not accessible from internet';
+     Then str2 := '可从互联网访问'
+     Else str2 := '无法从互联网访问';
 
      Synchronize( @proc2 );
      sleep(1000);
@@ -161,7 +161,7 @@ begin
      //Current server verion
      If get_version_information(version)
      Then str3 := version
-     Else str3 := 'Unable to obtain version information';
+     Else str3 := '无法获取版本信息';
 
      Synchronize( @proc3 );
      sleep(1000);
@@ -195,6 +195,15 @@ procedure Tserver_internet_status.FormShow(Sender: TObject);
 var
   str     :string;
 begin
+   // 汉化界面
+   Caption := '服务器互联网状态';
+   GroupBox1.Caption := '互联网状态：';
+   Lbl_ip_address_a.Caption := '服务器IP地址';
+   Lbl_server_accessible_a.Caption := '服务器状态';
+   GroupBox2.Caption := '预配置服务器版本：';
+   Lbl_this_server_version_a.Caption := '此服务器版本';
+   Lbl_server_version_a.Caption := '当前服务器版本';
+   
    str:='';
    str:= str + 'UniServer Zero XV' +sLineBreak;
    str:= str + 'UniController ' + UNICONTROLLER_VERSION;

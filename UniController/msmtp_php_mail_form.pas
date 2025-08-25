@@ -216,6 +216,20 @@ var
   i        :integer;     // Loop counter
   RegexObj :TRegExpr;    // Object
 begin
+  // 汉化界面
+  Caption := 'MSMTP 邮件客户端工具 - PHP 使用';
+  GB_1.Caption := 'MSMTP 配置账户';
+  Lbl_configure_accounts.Caption := '配置账户：';
+  Btn_edit_config_file.Caption := '编辑配置文件';
+  Lbl_select_set.Caption := '选择默认账户：';
+  GB_2.Caption := 'MSMTP 发送测试邮件';
+  Lbl_email_to.Caption := '收件人：';
+  Lbl_subject.Caption := '主题：';
+  Lbl_message.Caption := '消息：';
+  Btn_send.Caption := '发送邮件';
+  GB_3_log_file.Caption := '日志文件';
+  Btn_clear.Caption := '清除';
+  
   //List accounts configured
   If Fileexists(USF_MSMTP_INI) Then
    begin

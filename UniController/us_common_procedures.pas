@@ -661,8 +661,8 @@ end;
 Apache Server status indicator
 
 A bi-state indicator showing current server status.
- Red   � Server not running
- Green � Server is running
+ Red   � Server not running
+ Green � Server is running
 This indicator specifically targets Apache.
 
 Inputs:
@@ -980,8 +980,8 @@ end;
 MySQL Server status indicator
 
 A bi-state indicator showing current server status.
- Red   � Server not running
- Green � Server is running
+ Red   � Server not running
+ Green � Server is running
 This indicator specifically targets MySQL.
 
 Inputs:
@@ -2211,7 +2211,7 @@ begin
     AProcess.Parameters.Add('/C');                          // Close on exit
 
     AProcess.Parameters.Add('title');                       // A title is required
-    AProcess.Parameters.Add('Edit hosts');                  // Title
+    AProcess.Parameters.Add('编辑 hosts 文件');                  // Title
 
     AProcess.Parameters.Add('&&');                          // Start a new command line
     AProcess.Parameters.Add('start');                       // Command to run
@@ -2247,7 +2247,7 @@ begin
     AProcess.Parameters.Add('/C');                          // Close on exit
 
     AProcess.Parameters.Add('title');                       // A title is required
-    AProcess.Parameters.Add('Edit hosts');                  // Title
+    AProcess.Parameters.Add('编辑 hosts 文件');                  // Title
 
     AProcess.Parameters.Add('&&');                          // Start a new command line
     AProcess.Parameters.Add('start');                       // Command to run
@@ -2286,7 +2286,7 @@ begin
    AProcess.Parameters.Add('/C');                          // Close on exit
 
    AProcess.Parameters.Add('title');                       // A title is required
-   AProcess.Parameters.Add('Edit hosts');                  // Title
+   AProcess.Parameters.Add('编辑 hosts 文件');                  // Title
 
    AProcess.Parameters.Add('&&');                          // Start a new command line
    AProcess.Parameters.Add('start');                       // Command to run

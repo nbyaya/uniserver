@@ -355,17 +355,29 @@ type
   var
     str:string;
   begin
+    // 汉化界面
+    Caption := '服务器证书和密钥生成器';
+    Label_cn.Caption := '主机名或您的全名';
+    Label_o.Caption := '组织/公司';
+    Label_ou.Caption := '部门';
+    Label_e.Caption := '邮箱';
+    Label_l.Caption := '城市/地区';
+    Label_st.Caption := '州/省';
+    Label_c.Caption := '国家';
+    Label_bits.Caption := 'RSA 位数';
+    Button_reload.Caption := '重新加载';
+    Button_generate.Caption := '生成';
 
    //=== Check for CA
    If FileExists(USF_CERT_CA) Then
      begin
       //-- CA Found
       str := '';
-      str := str + 'It looks like you are using your own CA.' + sLineBreak;
-      str := str + 'To avoid overwriting your current server certificate and key' + sLineBreak;
-      str := str + 'this script has terminated.' + sLineBreak + sLineBreak;
-      str := str + 'To create a new server certificate and key, use the CA script.' ;
-      us_MessageDlg('CA Found', str, mtInformation,[mbOk],0) ; // Display message
+      str := str + '看起来您正在使用自己的 CA。' + sLineBreak;
+      str := str + '为了避免覆盖您当前的服务器证书和密钥，' + sLineBreak;
+      str := str + '此脚本已终止。' + sLineBreak + sLineBreak;
+      str := str + '要创建新的服务器证书和密钥，请使用 CA 脚本。' ;
+      us_MessageDlg('找到 CA', str, mtInformation,[mbOk],0) ; // Display message
       server_cert_key_gen.close;   // Close form nothing else to do
      end;
 
@@ -376,10 +388,10 @@ type
       begin
         // Server Certificate Found
         str := '';
-        str := str +  'A server certificate was found.'    + sLineBreak + sLineBreak;
-        str := str +  'Would you like to continue and '    + sLineBreak;
-        str := str +  'generate a NEW certificate and Key?'    ;
-       if us_MessageDlg('Server Certificate Found', str, mtConfirmation,[mbYes, mbNo],0) = mrNo then
+        str := str +  '找到服务器证书。'    + sLineBreak + sLineBreak;
+        str := str +  '您是否要继续并'    + sLineBreak;
+        str := str +  '生成新的证书和密钥？'    ;
+       if us_MessageDlg('找到服务器证书', str, mtConfirmation,[mbYes, mbNo],0) = mrNo then
           server_cert_key_gen.close;   // Close form nothing else to do
       end;
 
@@ -399,10 +411,10 @@ type
   begin
     // Help - Common name CN
     str := '';
-    str := str + '(CN) Common Name, usually the web server hostname or your name.' + sLineBreak;
-    str := str + 'To secure https://www.fred.com, your common name is www.fred.com ' + sLineBreak;
-    str := str + 'or *.fred.com for a wildcard certificate.';
-    us_MessageDlg('Help - Common name CN', str, mtInformation,[mbOk],0) ; // Display message
+    str := str + '(CN) 通用名称，通常是 Web 服务器主机名或您的姓名。' + sLineBreak;
+    str := str + '要保护 https://www.fred.com，您的通用名称是 www.fred.com ' + sLineBreak;
+    str := str + '或 *.fred.com 用于通配符证书。';
+    us_MessageDlg('帮助 - 通用名称 CN', str, mtInformation,[mbOk],0) ; // Display message
   end;
 
   procedure Tserver_cert_key_gen.Button_help_cClick(Sender: TObject);
@@ -411,9 +423,9 @@ type
   begin
     // Help - Country C
     str := '';
-    str := str + '(C) Country code two alphabetic characters.' + sLineBreak;
-    str := str + 'For example "United Kingdom" gives "UK"';
-    us_MessageDlg('Help - Country C' , str, mtInformation,[mbOk],0) ; // Display message
+    str := str + '(C) 国家代码，两个字母字符。' + sLineBreak;
+    str := str + '例如 "United Kingdom" 给出 "UK"';
+    us_MessageDlg('帮助 - 国家 C' , str, mtInformation,[mbOk],0) ; // Display message
   end;
 
   procedure Tserver_cert_key_gen.Button_help_bitsClick(Sender: TObject);
@@ -422,10 +434,10 @@ type
   begin
    // Help - RSA Bit length
    str :='';
-   str := str + 'Certification authorities are no longer issuing '      + sLineBreak;
-   str := str + 'certificates that are less than 2048 bit key lengths.' + sLineBreak;
-   str := str + 'Recommended to leave this set to default of 2048 bits. ' ;
-   us_MessageDlg('Help - RSA Bit length', str, mtInformation,[mbOk],0) ; // Display message
+   str := str + '认证机构不再颁发'      + sLineBreak;
+   str := str + '少于 2048 位密钥长度的证书。' + sLineBreak;
+   str := str + '建议保持默认的 2048 位设置。' ;
+   us_MessageDlg('帮助 - RSA 位长度', str, mtInformation,[mbOk],0) ; // Display message
   end;
 
   procedure Tserver_cert_key_gen.Button_generateClick(Sender: TObject);
@@ -547,13 +559,13 @@ type
 
    // Server Certificate Generated
    str :='';
-   str := str +  'Server certificate and key generated these '           + sLineBreak;
-   str := str +  'have been installed in folder Apache2\server_certs '   + sLineBreak+ sLineBreak;
+   str := str +  '服务器证书和密钥已生成，这些文件'           + sLineBreak;
+   str := str +  '已安装在文件夹 Apache2\server_certs 中'   + sLineBreak+ sLineBreak;
 
-   str := str +  'SSL has been enabled in Apache''s configuration file.' + sLineBreak+ sLineBreak;
-   str := str +  'Restart servers for changes to take place.';
+   str := str +  'SSL 已在 Apache 配置文件中启用。' + sLineBreak+ sLineBreak;
+   str := str +  '重启服务器以使更改生效。';
 
-   us_MessageDlg('Server Certificate Generated', str, mtInformation,[mbOk],0) ; //Display message
+   us_MessageDlg('服务器证书已生成', str, mtInformation,[mbOk],0) ; //Display message
 
    sleep(100);
    us_update_server_state;     // Update menus
@@ -567,9 +579,9 @@ type
   begin
     //Help - Email E
     str :='';
-    str := str + '(E) Usually specified for a email user certificate ' + sLineBreak;
-    str := str + 'for Activesync or SMIM. ';
-    us_MessageDlg('Help - Email E', str, mtInformation,[mbOk],0) ; //Display message
+    str := str + '(E) 通常为 ActiveSync 或 SMIM 的' + sLineBreak;
+    str := str + '电子邮件用户证书指定。';
+    us_MessageDlg('帮助 - 邮箱 E', str, mtInformation,[mbOk],0) ; //Display message
   end;
 
   procedure Tserver_cert_key_gen.Button_help_lClick(Sender: TObject);
@@ -577,8 +589,8 @@ type
     str:string;
   begin
    // Help - City/Local L
-   str := '(L) City/Local For example, London. ';
-   us_MessageDlg('Help - City/Local L', str, mtInformation,[mbOk],0) ; //Display message
+   str := '(L) 城市/地区 例如，伦敦。';
+   us_MessageDlg('帮助 - 城市/地区 L', str, mtInformation,[mbOk],0) ; //Display message
   end;
 
   procedure Tserver_cert_key_gen.Button_help_oClick(Sender: TObject);
@@ -586,8 +598,8 @@ type
     str:string;
   begin
     //Help - Organisation O
-    str := '(O) Organisation for example, My Corporation';
-    us_MessageDlg('Help - Organisation O ', str, mtInformation,[mbOk],0) ; //Display message
+    str := '(O) 组织 例如，我的公司';
+    us_MessageDlg('帮助 - 组织 O', str, mtInformation,[mbOk],0) ; //Display message
   end;
 
   procedure Tserver_cert_key_gen.Button_help_ouClick(Sender: TObject);
@@ -595,8 +607,8 @@ type
     str:string;
   begin
     // Help - Organisation Unit OU
-    str := '(OU) Your division or department. For example, PHP Dept.';
-    us_MessageDlg('Help - Organisation Unit OU', str, mtInformation,[mbOk],0) ; //Display message
+    str := '(OU) 您的部门或科室。例如，PHP 部门。';
+    us_MessageDlg('帮助 - 组织单位 OU', str, mtInformation,[mbOk],0) ; //Display message
   end;
 
   procedure Tserver_cert_key_gen.Button_help_stClick(Sender: TObject);
@@ -604,8 +616,8 @@ type
     str:string;
   begin
    // Help - State ST
-   str := '(ST) For example, Cambridgeshire.';
-   us_MessageDlg('Help - State ST', str, mtInformation,[mbOk],0) ; //Display message
+   str := '(ST) 例如，剑桥郡。';
+   us_MessageDlg('帮助 - 州/省 ST', str, mtInformation,[mbOk],0) ; //Display message
   end;
 
   end.

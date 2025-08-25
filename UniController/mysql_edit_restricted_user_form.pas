@@ -122,7 +122,20 @@ end;
 
 procedure Tmysql_edit_restricted_user.FormShow(Sender: TObject);
 begin
-  mysql_edit_restricted_user.Caption := 'Edit Restricted '+US_MYMAR_TXT+' User'; // Edit Restricted MySQL User
+     // 汉化界面
+   mysql_edit_restricted_user.Caption := '编辑受限 '+US_MYMAR_TXT+' 用户';
+   GB_select_a_user.Caption := '选择用户';
+   GB_edit.Caption := '编辑受限用户';
+   GB_privileges.Caption := '权限';
+   Lbl_user_name.Caption := '用户名';
+   Lbl_password.Caption := '密码';
+   Lbl_db_name.Caption := '数据库';
+   Btn_update_user.Caption := '更新用户';
+   Btn_delete.Caption := '删除用户';
+   Btn_help.Caption := '帮助';
+   Btn_cancel.Caption := '取消';
+   Btn_cancel_2.Caption := '取消';
+  
   mysql_edit_restricted_user_init;
   display_users; //Display list of users in ListBox1
 end;
@@ -177,18 +190,18 @@ begin
     //str_mysql_ue_help_title         = Edit Restricted MySQL User - Help
   str :='';
 
-  str := str + 'From this menu item you can either delete'   + sLineBreak;
-  str := str + 'or update a restricted '+US_MYMAR_TXT+' user.' + sLineBreak+ sLineBreak;
+  str := str + '从此菜单项您可以删除'   + sLineBreak;
+  str := str + '或更新受限的 '+US_MYMAR_TXT+' 用户。' + sLineBreak+ sLineBreak;
 
-  str := str + 'Delete:' + sLineBreak;
-  str := str + 'Select user from list and click delete button.' + sLineBreak+ sLineBreak;
+  str := str + '删除：' + sLineBreak;
+  str := str + '从列表中选择用户并点击删除按钮。' + sLineBreak+ sLineBreak;
 
-  str := str + 'Update:' + sLineBreak;
-  str := str + 'Select user from list. Change parameters as required.' + sLineBreak;
-  str := str + 'Click Update User button.' + sLineBreak;
+  str := str + '更新：' + sLineBreak;
+  str := str + '从列表中选择用户。根据需要更改参数。' + sLineBreak;
+  str := str + '点击更新用户按钮。' + sLineBreak;
 
 
-  us_MessageDlg('Edit Restricted '+US_MYMAR_TXT+' User - Help', str, mtInformation,[mbOk],0) ; //Display message
+  us_MessageDlg('编辑受限 '+US_MYMAR_TXT+' 用户 - 帮助', str, mtInformation,[mbOk],0) ; //Display message
 end;
 
 procedure Tmysql_edit_restricted_user.Btn_cancelClick(Sender: TObject);
@@ -269,19 +282,19 @@ begin
  If not us_valid_mysql_user_name(Ed_user_name.Text) Then  // Validate input
   begin
     update_user := False;   //Can not update user
-    us_MessageDlg('Error', 'Invalid or no user name', mtWarning,[mbOk],0) ; // Invalid or no user name
+    us_MessageDlg('错误', '无效或未输入用户名', mtWarning,[mbOk],0) ; // Invalid or no user name
   end;
 
  If not us_valid_mysql_password(Ed_password.Text) Then   // Validate input
   begin
     update_user := False;   //Can not update user
-    us_MessageDlg('Error', 'Invalid or no user password', mtWarning,[mbOk],0) ; // Invalid or no user password
+    us_MessageDlg('错误', '无效或未输入用户密码', mtWarning,[mbOk],0) ; // Invalid or no user password
   end;
 
   If not us_valid_mysql_db_name(Ed_db_name.Text) Then  // Validate input
   begin
     update_user := False;   //Can not create a user
-    us_MessageDlg('Error', 'Invalid or no db name. Please enter or select a database name', mtWarning,[mbOk],0) ; // Invalid or no db name. Please enter or select a database name
+    us_MessageDlg('错误', '无效或未输入数据库名称。请输入或选择一个数据库名称', mtWarning,[mbOk],0) ; // Invalid or no db name. Please enter or select a database name
   end;
 
   //--Check privileges selected
@@ -298,7 +311,7 @@ begin
   If not priv_selected Then  // No selection
   begin
     update_user := False;   //Can not create a user
-    us_MessageDlg('Error', 'No privileges selected.', mtWarning,[mbOk],0) ; // No privileges selected.
+    us_MessageDlg('错误', '未选择任何权限。', mtWarning,[mbOk],0) ; // No privileges selected.
   end;
 
 
@@ -361,7 +374,7 @@ begin
   sList.Free;                      // Remove from memory
 
   //--Display restricted MySQL User Updated
-  us_MessageDlg('Updated', 'Restricted '+US_MYMAR_TXT+' User Updated', mtInformation,[mbOk],0) ;
+  us_MessageDlg('已更新', '受限 '+US_MYMAR_TXT+' 用户已更新', mtInformation,[mbOk],0) ;
   mysql_edit_restricted_user_init; //Reset
    end;
 end;

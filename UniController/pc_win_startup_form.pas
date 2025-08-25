@@ -135,10 +135,10 @@ begin
   // Check if key exist...
   // ...if yes, try to delete the entry for ApTitle
   if not Reg.OpenKey(TheKey, False) then
-    us_MessageDlg('Key Info','Key not found', mtcustom,[mbOk],0) //Display information message
+    us_MessageDlg('注册表信息','未找到注册表项', mtcustom,[mbOk],0) //Display information message
   else begin
     if Reg.DeleteValue(ApTitle) then
-     us_MessageDlg('Key Info','Removed: Entry from registry', mtcustom,[mbOk],0) ; //Display information message
+     us_MessageDlg('注册表信息','已从注册表中删除条目', mtcustom,[mbOk],0) ; //Display information message
 //    ShowMessage('Removed: ' + ApTitle);
 //    else
 //      ShowMessage('Not found: ' + ApTitle);
@@ -168,7 +168,7 @@ begin
    begin
      USC_RunAtPcStartUpEnabled := False;            //Set to false
      pc_win_startup.CB_enable_run.Checked := False; //UnCheck
-     us_MessageDlg('Error','Note at least one item must be selected!' + sLineBreak +' Please select an item to run', mtError,[mbOk],0) ; //Display information message
+     us_MessageDlg('错误','注意：至少必须选择一个项目！' + sLineBreak +' 请选择一个要运行的项目', mtError,[mbOk],0) ; //Display information message
    end;
 
  //Save new values to config file
@@ -219,6 +219,14 @@ end;
 
 procedure Tpc_win_startup.FormCreate(Sender: TObject);
 begin
+ // 汉化界面
+ Caption := '启动项设置';
+ GB_pc_win_startup.Caption := '选择启动时运行的项目';
+ CB_enable_run_apache.Caption := 'Apache 服务器';
+ CB_enable_run_mysql.Caption := 'MySQL 服务器';
+ GB_enable_disable.Caption := '启用/禁用启动时运行';
+ CB_enable_run.Caption := '启动时运行';
+ 
  //==If Apache or MySQL installed enable pc_win_startup menu button
  If (DirectoryExists(US_APACHE)) or (DirectoryExists(US_MYSQL)) Then
     begin
@@ -282,25 +290,25 @@ begin
    GB_pc_win_startup.Enabled := False; //Disable check boxes
    GB_enable_disable.Enabled := False; //Disable check boxes
    //Inform user what to do
-   str_title := 'Administrative privileges required'; //Title
+   str_title := '需要管理员权限'; //Title
    str :='';
 
-   str := str + 'This menu item is disabled because it requires administrative privileges.'         + sLineBreak;
-   str := str + 'To run menu item as administrator proceed as follows:'         + sLineBreak + sLineBreak;
+   str := str + '此菜单项被禁用，因为它需要管理员权限。'         + sLineBreak;
+   str := str + '要以管理员身份运行菜单项，请按以下步骤操作：'         + sLineBreak + sLineBreak;
 
-   str := str + '1) Close this menu.'         + sLineBreak;
-   str := str + '2) If running stop Apache and MySQL servers.'         + sLineBreak;
-   str := str + '3) Close UniController'         + sLineBreak + sLineBreak;
+   str := str + '1) 关闭此菜单。'         + sLineBreak;
+   str := str + '2) 如果正在运行，请停止 Apache 和 MySQL 服务器。'         + sLineBreak;
+   str := str + '3) 关闭 UniController'         + sLineBreak + sLineBreak;
 
-   str := str + '4) Right click on UniController.exe'         + sLineBreak;
-   str := str + '5) Select Run as administrator'         + sLineBreak;
-   str := str + '6) This menu item will then be enabled.'         + sLineBreak + sLineBreak;
+   str := str + '4) 右键单击 UniController.exe'         + sLineBreak;
+   str := str + '5) 选择"以管理员身份运行"'         + sLineBreak;
+   str := str + '6) 此菜单项将被启用。'         + sLineBreak + sLineBreak;
 
-   str := str + 'Note:'         + sLineBreak;
-   str := str + 'After selecting required menu options close menu and UniController.'         + sLineBreak;
-   str := str + 'Restart UniController by double clicking on  UniController.exe'         + sLineBreak;
-   str := str + 'This prevents running UniController as administrator. Permanently running as'         + sLineBreak;
-   str := str + 'administrator is a security risk.'         + sLineBreak;
+   str := str + '注意：'         + sLineBreak;
+   str := str + '选择所需的菜单选项后，请关闭菜单和 UniController。'         + sLineBreak;
+   str := str + '通过双击 UniController.exe 重新启动 UniController'         + sLineBreak;
+   str := str + '这可以防止 UniController 以管理员身份运行。永久以管理员身份运行'         + sLineBreak;
+   str := str + '存在安全风险。'         + sLineBreak;
 
    us_MessageDlg(str_title, str, mtInformation,[mbOk],0) ; //Display message
   end;

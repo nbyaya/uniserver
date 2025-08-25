@@ -117,7 +117,18 @@ end;
 
 procedure Tmysql_create_restricted_user.FormShow(Sender: TObject);
 begin
-  mysql_create_restricted_user.Caption := 'Create Restricted '+US_MYMAR_TXT+' User'; //Create Restricted MySQL User
+     // 汉化界面
+   mysql_create_restricted_user.Caption := '创建受限 '+US_MYMAR_TXT+' 用户';
+   GB_create.Caption := '创建受限用户';
+   GB_privileges.Caption := '权限';
+   GB_select_db.Caption := '选择数据库选项';
+   Lbl_user_name.Caption := '用户名';
+   Lbl_password.Caption := '密码';
+   Lbl_db_name.Caption := '数据库';
+   Btn_create_user.Caption := '创建用户';
+   Btn_cancel.Caption := '取消';
+   Btn_help.Caption := '帮助';
+  
   mysql_create_restricted_user_init; // Set initial conditions
   display_databases;                 // Display list of databases in ListBox1
 end;
@@ -142,7 +153,7 @@ begin
   str := str +  'Enter a database name or select one from the option list.' + sLineBreak;
   str := str +  'If the database does not exit it is created.' + sLineBreak;
 
-  us_MessageDlg('Restricted '+US_MYMAR_TXT+' User - Help ', str, mtInformation,[mbOk],0) ; //Display message
+  us_MessageDlg('受限 '+US_MYMAR_TXT+' 用户 - 帮助 ', str, mtInformation,[mbOk],0) ; //Display message
 
 end;
 
@@ -175,19 +186,19 @@ begin
  If not us_valid_mysql_user_name(Ed_user_name.Text) Then  // Validate input
   begin
     create_user := False;   //Can not create a user
-    us_MessageDlg('Error', 'Invalid or no user name', mtWarning,[mbOk],0) ; // Invalid or no user name
+    us_MessageDlg('错误', '无效或未输入用户名', mtWarning,[mbOk],0) ; // Invalid or no user name
   end;
 
  If not us_valid_mysql_password(Ed_password.Text) Then   // Validate input
   begin
     create_user := False;   //Can not create a user
-    us_MessageDlg('Error', 'Invalid or no user password', mtWarning,[mbOk],0) ; // Invalid or no user password
+    us_MessageDlg('错误', '无效或未输入用户密码', mtWarning,[mbOk],0) ; // Invalid or no user password
   end;
 
   If not us_valid_mysql_db_name(Ed_db_name.Text) Then  // Validate input
   begin
     create_user := False;   //Can not create a user
-    us_MessageDlg('Error', 'Invalid or no db name. Please enter or select a database name', mtWarning,[mbOk],0) ; // Invalid or no db name. Please enter or select a database name
+    us_MessageDlg('错误', '无效或未输入数据库名称。请输入或选择一个数据库名称', mtWarning,[mbOk],0) ; // Invalid or no db name. Please enter or select a database name
   end;
 
   //--Check privileges selected
@@ -204,7 +215,7 @@ begin
   If not priv_selected Then  // No selection
   begin
     create_user := False;   //Can not create a user
-    us_MessageDlg('Error', 'No privileges selected.', mtWarning,[mbOk],0) ; // No privileges selected.
+    us_MessageDlg('错误', '未选择任何权限。', mtWarning,[mbOk],0) ; // No privileges selected.
   end;
 
 
@@ -245,7 +256,7 @@ begin
   dummy.Free;                      // Remove from memory
 
   //--Display restricted MySQL User Created
-  us_MessageDlg('Created' , 'Restricted MySQL User Created', mtInformation,[mbOk],0) ;
+        us_MessageDlg('已创建' , '受限 MySQL 用户已创建', mtInformation,[mbOk],0) ;
   mysql_create_restricted_user_init;
    end;
 

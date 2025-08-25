@@ -291,6 +291,21 @@ begin
 
 procedure Troot_ssl_pass_access.FormShow(Sender: TObject);
 begin
+   // 汉化界面
+   Caption := 'ssl 根目录 - 更改密码和访问权限';
+   GBox_enter_name_password.Caption := '输入名称和密码';
+   Label_name.Caption := '名称';
+   Label_password.Caption := '密码';
+   Btn_add_to_list.Caption := '添加到列表 >>';
+   Btn_delete_selected.Caption := '删除选中项';
+   GBox_enable_disable_password.Caption := '启用或禁用密码';
+   RBtn_password_disabled.Caption := '密码已禁用';
+   RBtn_password_enabled.Caption := '密码已启用';
+   GBox_access.Caption := 'Apache 服务器访问';
+   RBtn_local.Caption := '本地访问';
+   RBtn_local_intranet.Caption := '本地和局域网访问';
+   RBtn_local_intranet_internet.Caption := '本地、局域网和互联网访问';
+   
     //===Ensure htaccess file exists. Option for user to crate.
   if us_ssl_htaccess_check_create Then  // Check for htaccess file. Allow user to crate.
    begin
@@ -370,7 +385,7 @@ begin
      If (Edit_name.Text = '') or  (Edit_password.Text ='') Then
     begin
      // Display warning mesage Both Name and Password required
-      us_MessageDlg('Error','Both Name and Password required', mtWarning,[mbOk],0) ;
+      us_MessageDlg('错误','名称和密码都是必需的', mtWarning,[mbOk],0) ;
     end
    else
    begin

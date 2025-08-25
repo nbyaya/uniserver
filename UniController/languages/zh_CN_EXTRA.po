@@ -1,0 +1,315 @@
+# Chinese translations for UniController - EXTRA Menu Supplement
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# EXTRA Menu and Submenu Items
+msgid "Extra"
+msgstr "扩展功能"
+
+msgid "PC-Win start-up"
+msgstr "PC-Win 启动设置"
+
+msgid "Cron"
+msgstr "定时任务"
+
+msgid "Edit Win hosts file"
+msgstr "编辑 Windows hosts 文件"
+
+# Apache Menu Items
+msgid "Apache"
+msgstr "Apache"
+
+msgid "Change Apache ports"
+msgstr "修改 Apache 端口"
+
+msgid "Change Apache port"
+msgstr "修改 Apache 端口"
+
+msgid "Change Apache SSL port"
+msgstr "修改 Apache SSL 端口"
+
+msgid "Change Apache Root-folders"
+msgstr "修改 Apache 根目录"
+
+msgid "Select new server Root-Folder (www)"
+msgstr "选择新的服务器根目录 (www)"
+
+msgid "Select new server Root-Folder (ssl)"
+msgstr "选择新的服务器根目录 (ssl)"
+
+msgid "Edit Configuration Files"
+msgstr "编辑配置文件"
+
+msgid "Edit Config file httpd.conf"
+msgstr "编辑配置文件 httpd.conf"
+
+msgid "Edit Config file httpd-ssl.conf"
+msgstr "编辑配置文件 httpd-ssl.conf"
+
+msgid "Edit Basic and Modules"
+msgstr "编辑基本配置和模块"
+
+msgid "Edit Basic Configuration"
+msgstr "编辑基本配置"
+
+msgid "Apache Modules Enable/Disable"
+msgstr "Apache 模块启用/禁用"
+
+msgid "Access and Passwords"
+msgstr "访问和密码"
+
+msgid "Folder www access and passwords"
+msgstr "www 文件夹访问和密码"
+
+msgid "Folder ssl access and passwords"
+msgstr "ssl 文件夹访问和密码"
+
+msgid "Apache SSL"
+msgstr "Apache SSL"
+
+msgid "Server Certificate and Key generator"
+msgstr "服务器证书和密钥生成器"
+
+msgid "Enable SSL"
+msgstr "启用 SSL"
+
+msgid "Apache Vhosts"
+msgstr "Apache 虚拟主机"
+
+msgid "Create Apache Vhost"
+msgstr "创建 Apache 虚拟主机"
+
+msgid "Delete Apache Vhost"
+msgstr "删除 Apache 虚拟主机"
+
+msgid "Apache server Info - Status"
+msgstr "Apache 服务器信息 - 状态"
+
+msgid "Apache server information"
+msgstr "Apache 服务器信息"
+
+msgid "Apache server status"
+msgstr "Apache 服务器状态"
+
+msgid "Apache Logs"
+msgstr "Apache 日志"
+
+msgid "View Apache Error Log"
+msgstr "查看 Apache 错误日志"
+
+msgid "View Apache Access Log"
+msgstr "查看 Apache 访问日志"
+
+msgid "View Apache SSL Error Log"
+msgstr "查看 Apache SSL 错误日志"
+
+msgid "View Apache SSL Access Log"
+msgstr "查看 Apache SSL 访问日志"
+
+msgid "Delete  above logs"
+msgstr "删除上述日志"
+
+msgid "Apache Syntax Check -t"
+msgstr "Apache 语法检查 -t"
+
+msgid "Start-up pages"
+msgstr "启动页面"
+
+msgid "Display page1 at start-up"
+msgstr "启动时显示页面1"
+
+msgid "Select page1 to display"
+msgstr "选择要显示的页面1"
+
+msgid "Display page2 at start-up"
+msgstr "启动时显示页面2"
+
+msgid "Select page2 to display"
+msgstr "选择要显示的页面2"
+
+# MySQL Menu Items
+msgid "MySQL"
+msgstr "MySQL"
+
+msgid "Change MySQL port"
+msgstr "修改 MySQL 端口"
+
+msgid "Change MySQL root password"
+msgstr "修改 MySQL root 密码"
+
+msgid "Restore default password (root)"
+msgstr "恢复默认密码 (root)"
+
+msgid "Database create-delete"
+msgstr "数据库创建-删除"
+
+msgid "Create restricted MySQL user"
+msgstr "创建受限 MySQL 用户"
+
+msgid "Edit restricted MySQL user"
+msgstr "编辑受限 MySQL 用户"
+
+msgid "Database backup"
+msgstr "数据库备份"
+
+msgid "Database restore"
+msgstr "数据库恢复"
+
+msgid "Edit Config file my.ini"
+msgstr "编辑配置文件 my.ini"
+
+msgid "MySQL error log"
+msgstr "MySQL 错误日志"
+
+# PHP Menu Items
+msgid "PHP"
+msgstr "PHP"
+
+msgid "View phpInfo"
+msgstr "查看 phpInfo"
+
+msgid "Select PHP version"
+msgstr "选择 PHP 版本"
+
+msgid "PHP version 70"
+msgstr "PHP 版本 7.0"
+
+msgid "PHP Version 71"
+msgstr "PHP 版本 7.1"
+
+msgid "PHP Version 72"
+msgstr "PHP 版本 7.2"
+
+msgid "PHP Version 73"
+msgstr "PHP 版本 7.3"
+
+msgid "PHP Version 74"
+msgstr "PHP 版本 7.4"
+
+msgid "PHP version 80"
+msgstr "PHP 版本 8.0"
+
+msgid "PHP version 81"
+msgstr "PHP 版本 8.1"
+
+msgid "PHP version 82"
+msgstr "PHP 版本 8.2"
+
+msgid "PHP version 83"
+msgstr "PHP 版本 8.3"
+
+msgid "Select PHP configuration file"
+msgstr "选择 PHP 配置文件"
+
+msgid "PHP config file php_test.ini"
+msgstr "PHP 配置文件 php_test.ini"
+
+msgid "PHP config file php_development.ini"
+msgstr "PHP 配置文件 php_development.ini"
+
+msgid "PHP config file php_production.ini"
+msgstr "PHP 配置文件 php_production.ini"
+
+msgid "Edit selected configuration file"
+msgstr "编辑选中的配置文件"
+
+msgid "PHP Modules Enable/Disable"
+msgstr "PHP 模块启用/禁用"
+
+msgid "Enable/Disable Zend OpCache Accelerator"
+msgstr "启用/禁用 Zend OpCache 加速器"
+
+msgid "View Zend OpCache Control Panel"
+msgstr "查看 Zend OpCache 控制面板"
+
+# Perl Menu Items
+msgid "Perl"
+msgstr "Perl"
+
+msgid "Shebang Help"
+msgstr "Shebang 帮助"
+
+msgid "Force Windows Shebang"
+msgstr "强制 Windows Shebang"
+
+msgid "Force Unix Shebang"
+msgstr "强制 Unix Shebang"
+
+msgid "View test.pl"
+msgstr "查看 test.pl"
+
+# About Menu
+msgid "About"
+msgstr "关于"
+
+# Main Form Elements
+msgid "Apache Utilities"
+msgstr "Apache 工具"
+
+msgid "Server Console"
+msgstr "服务器控制台"
+
+msgid "View www"
+msgstr "查看 www"
+
+msgid "View ssl"
+msgstr "查看 ssl"
+
+msgid "Documentation"
+msgstr "文档"
+
+# Common Interface Elements
+msgid "OK"
+msgstr "确定"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Confirmation"
+msgstr "确认"
+
+msgid "Please wait..."
+msgstr "请稍候..."
+
+msgid "Operation completed successfully"
+msgstr "操作成功完成"
+
+msgid "Operation failed"
+msgstr "操作失败"
+
+msgid "File not found"
+msgstr "文件未找到"
+
+msgid "Access denied"
+msgstr "访问被拒绝"
+
+msgid "Invalid parameter"
+msgstr "参数无效"

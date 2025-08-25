@@ -460,6 +460,16 @@ end;
 
 procedure Tcron.FormCreate(Sender: TObject);
 begin
+  // 汉化界面
+  Caption := '定时任务';
+  GB1_cron_config_view_log.Caption := '配置和日志';
+  Btn_edit_config.Caption := '编辑配置文件';
+  Btn_view_log.Caption := '查看日志文件';
+  G2_cron_enable_disable.Caption := '启用/禁用定时任务';
+  CB_enable_cron.Caption := '运行定时任务';
+  G2_logging_enable_disable.Caption := '启用/禁用定时任务日志';
+  CB_enable_cron_logging.Caption := '定时任务日志';
+  
   //Cron check box
   If USC_enable_cron Then
      CB_enable_cron.state := cbChecked     // Cron enabled

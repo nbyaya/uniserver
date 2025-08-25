@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, main_unit, default_config_vars, us_common_procedures,
+  Forms, SysUtils, LCLTranslator, Translations, main_unit, default_config_vars, us_common_procedures,
   us_common_functions, about_form, us_server_state, server_cert_key_gen_form,
   vhost_create_form, vhost_delete_form, apache_modules_form, apache_basic_form,
   root_www_pass_access_form, root_ssl_pass_access_form, php_extensions_form,
@@ -22,6 +22,18 @@ uses
 begin
   RequireDerivedFormResource := True;
   Application.Scaled:=True;
+  
+  // Initialize i18n support
+  SetDefaultLang('zh_CN');
+  if FileExists('languages/zh_CN.po') then
+    TranslateUnitResourceStrings('LCLStrConsts', 'languages/zh_CN.po');
+  // Load additional translations for EXTRA menu and submenus
+  if FileExists('languages/zh_CN_EXTRA.po') then
+    TranslateUnitResourceStrings('LCLStrConsts', 'languages/zh_CN_EXTRA.po');
+  // Load translations for main form and other units
+  if FileExists('languages/zh_CN_EXTRA.po') then
+    TranslateUnitResourceStrings('main_unit', 'languages/zh_CN_EXTRA.po');
+  
   Application.Initialize;
   Application.CreateForm(TMain, Main);
   Application.CreateForm(TAbout, About);

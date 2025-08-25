@@ -10,6 +10,8 @@ unit main_unit;
 
 interface
 
+
+
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, Menus,
@@ -278,6 +280,223 @@ implementation
 {$R unicon_images.rc}  // Add image resource for tray icon -> Added into the Project Resources
 
 { TMain }
+
+// Initialize Chinese interface text
+procedure InitializeChineseInterface;
+begin
+  // Update main form caption and controls to Chinese
+  with Main do
+  begin
+    Caption := '便携式WAMP服务器';
+    
+    // Update GroupBox captions
+    GB2.Caption := 'Apache 工具';
+    GB_mysql_utilities.Caption := US_MYMAR_TXT + ' 工具';
+    
+    // Update basic button captions
+    Btn_server_console.Caption := '服务器控制台';
+    Btn_view_www.Caption := '查看 WWW';
+    Btn_view_ssl.Caption := '查看 SSL';
+    Btn_documentation.Caption := '文档';
+    Btn_mysql_console.Caption := US_MYMAR_TXT + ' 控制台';
+    
+    Btn_opt1.Caption := US_OPT1_BTN_TXT;
+    Btn_opt2.Caption := US_OPT2_BTN_TXT;
+    Btn_opt3.Caption := US_OPT3_BTN_TXT;
+    
+    // Update menu items
+    MM_general.Caption := '常规';
+    MM_apache.Caption := 'Apache';
+    MM_php.Caption := 'PHP';
+    MM_mysql.Caption := US_MYMAR_TXT;
+    MM_perl.Caption := 'Perl';
+    MM_about.Caption := '关于';
+    
+    // Update EXTRA menu and submenu items
+    if Assigned(MenuItem1) then
+      MenuItem1.Caption := '扩展功能';  // EXTRA menu
+    if Assigned(MMS_pc_win_startup) then
+      MMS_pc_win_startup.Caption := '启动项设置';  // 修改为"启动项设置"
+    if Assigned(MMS_cron) then
+      MMS_cron.Caption := '定时任务';
+    if Assigned(MMS_hosts) then
+      MMS_hosts.Caption := '编辑 Windows hosts 文件';
+    
+    // Update Apache submenu items
+    if Assigned(MMS_apache_change_ports) then
+      MMS_apache_change_ports.Caption := '修改 Apache 端口';
+    if Assigned(MMS_apache_change_root_folder) then
+      MMS_apache_change_root_folder.Caption := '修改 Apache 根目录';
+    if Assigned(MMS_apache_edit_configs) then
+      MMS_apache_edit_configs.Caption := '编辑配置文件';
+    if Assigned(MMS_apache_basic_and_modules) then
+      MMS_apache_basic_and_modules.Caption := '编辑基本配置和模块';
+    if Assigned(MMS_folder_access_passwords) then
+      MMS_folder_access_passwords.Caption := '访问和密码';
+    if Assigned(MMS_apache_ssl) then
+      MMS_apache_ssl.Caption := 'Apache SSL';
+    if Assigned(MMS_apache_vhosts) then
+      MMS_apache_vhosts.Caption := 'Apache 虚拟主机';
+    if Assigned(MMS_apache_server_info_status) then
+      MMS_apache_server_info_status.Caption := 'Apache 服务器信息 - 状态';
+    if Assigned(MMS_apache_logs) then
+      MMS_apache_logs.Caption := 'Apache 日志';
+    if Assigned(MMS_apache_syntax_check) then
+      MMS_apache_syntax_check.Caption := 'Apache 语法检查 -t';
+    if Assigned(MMS_acache_start_up_pages) then
+      MMS_acache_start_up_pages.Caption := '启动页面';
+    
+    // Update Apache third-level submenu items (Apache三级菜单)
+    if Assigned(MMSS_apache_change_port) then
+      MMSS_apache_change_port.Caption := '修改 Apache 端口';
+    if Assigned(MMSS_apache_change_ssl_port) then
+      MMSS_apache_change_ssl_port.Caption := '修改 Apache SSL 端口';
+    if Assigned(MMSS_apache_select_root_folder_www) then
+      MMSS_apache_select_root_folder_www.Caption := '选择新的服务器根目录 (www)';
+    if Assigned(MMSS_apache_select_root_folder_ssl) then
+      MMSS_apache_select_root_folder_ssl.Caption := '选择新的服务器根目录 (ssl)';
+    if Assigned(MMSS_apache_edit_httpd_conf) then
+      MMSS_apache_edit_httpd_conf.Caption := '编辑配置文件 httpd.conf';
+    if Assigned(MMSS_apache_edit_ssl_conf) then
+      MMSS_apache_edit_ssl_conf.Caption := '编辑配置文件 httpd-ssl.conf';
+    if Assigned(MMSS_apache_edit_basic) then
+      MMSS_apache_edit_basic.Caption := '编辑基本配置';
+    if Assigned(MMSS_apache_edit_modules) then
+      MMSS_apache_edit_modules.Caption := 'Apache 模块启用/禁用';
+    if Assigned(MMSS_folder_www_access_pass) then
+      MMSS_folder_www_access_pass.Caption := 'www 文件夹访问和密码';
+    if Assigned(MMSS_folder_ssl_access_pass) then
+      MMSS_folder_ssl_access_pass.Caption := 'ssl 文件夹访问和密码';
+    if Assigned(MMSS_server_cert_key) then
+      MMSS_server_cert_key.Caption := '服务器证书和密钥生成器';
+    if Assigned(MMSS_enable_disable_ssl) then
+      MMSS_enable_disable_ssl.Caption := '启用 SSL';
+    if Assigned(MMSS_apache_add_vhost) then
+      MMSS_apache_add_vhost.Caption := '创建 Apache 虚拟主机';
+    if Assigned(MMSS_apache_delete_vhost) then
+      MMSS_apache_delete_vhost.Caption := '删除 Apache 虚拟主机';
+    if Assigned(MMSS_apache_server_information) then
+      MMSS_apache_server_information.Caption := 'Apache 服务器信息';
+    if Assigned(MMSS_apache_server_status) then
+      MMSS_apache_server_status.Caption := 'Apache 服务器状态';
+    if Assigned(MMSS_apache_error_log) then
+      MMSS_apache_error_log.Caption := '查看 Apache 错误日志';
+    if Assigned(MMSS_apache_access_log) then
+      MMSS_apache_access_log.Caption := '查看 Apache 访问日志';
+    if Assigned(MMSS_apache_ssl_error_log) then
+      MMSS_apache_ssl_error_log.Caption := '查看 Apache SSL 错误日志';
+    if Assigned(MMSS_apache_ssl_access_log) then
+      MMSS_apache_ssl_access_log.Caption := '查看 Apache SSL 访问日志';
+    if Assigned(MMSS_apache_delete_all_logs) then
+      MMSS_apache_delete_all_logs.Caption := '删除上述日志';
+    
+    // Update MySQL submenu items
+    if Assigned(MMS_mysql_change_port) then
+      MMS_mysql_change_port.Caption := '修改 MySQL 端口';
+    if Assigned(MMS_mysql_change_pwd) then
+      MMS_mysql_change_pwd.Caption := '修改 MySQL root 密码';
+    if Assigned(MMS_mysql_restore_root_pwd) then
+      MMS_mysql_restore_root_pwd.Caption := '恢复默认密码 (root)';
+    if Assigned(MMS_mysql_database_create_delete) then
+      MMS_mysql_database_create_delete.Caption := '数据库创建-删除';
+    if Assigned(MMS_mysql_create_user) then
+      MMS_mysql_create_user.Caption := '创建受限 MySQL 用户';
+    if Assigned(MMS_mysql_edit_user) then
+      MMS_mysql_edit_user.Caption := '编辑受限 MySQL 用户';
+    if Assigned(MMS_mysql_database_backup) then
+      MMS_mysql_database_backup.Caption := '数据库备份';
+    if Assigned(MMS_mysql_database_restore) then
+      MMS_mysql_database_restore.Caption := '数据库恢复';
+    if Assigned(MMS_mysql_edit_config) then
+      MMS_mysql_edit_config.Caption := '编辑配置文件 my.ini';
+    if Assigned(MMS_mysql_error_log) then
+      MMS_mysql_error_log.Caption := 'MySQL 错误日志';
+    
+    // Update PHP submenu items
+    if Assigned(MMS_view_phpinfo) then
+      MMS_view_phpinfo.Caption := '查看 phpInfo';
+    if Assigned(MMS_select_php_version) then
+      MMS_select_php_version.Caption := '选择 PHP 版本';
+    if Assigned(MMS_select_php_config) then
+      MMS_select_php_config.Caption := '选择 PHP 配置文件';
+    if Assigned(MMS_edit_selected_php_config) then
+      MMS_edit_selected_php_config.Caption := '编辑选中的配置文件';
+    if Assigned(MMS_php_basic_and_modules) then
+      MMS_php_basic_and_modules.Caption := '编辑基本配置和模块';
+    if Assigned(MMS_php_view_accelerator_control_panel) then
+      MMS_php_view_accelerator_control_panel.Caption := '查看 Zend OpCache 控制面板';
+    
+    // Update PHP third-level submenu items (PHP三级菜单)
+    if Assigned(MMSS_php_edit_basic) then
+      MMSS_php_edit_basic.Caption := '编辑基本配置';
+    if Assigned(MMSS_php_edit_modules) then
+      MMSS_php_edit_modules.Caption := 'PHP 模块启用/禁用';
+    if Assigned(MMSS_php_acc_zop) then
+      MMSS_php_acc_zop.Caption := '启用/禁用 Zend OpCache 加速器';
+    
+    // Update Perl submenu items
+    if Assigned(MMS_shebang_help) then
+      MMS_shebang_help.Caption := 'Shebang 帮助';
+    if Assigned(MMS_force_windows_shebang) then
+      MMS_force_windows_shebang.Caption := '强制 Windows Shebang';
+    if Assigned(MMS_force_unix_shebang) then
+      MMS_force_unix_shebang.Caption := '强制 Unix Shebang';
+    if Assigned(MMS_perl_view_test_pl) then
+      MMS_perl_view_test_pl.Caption := '查看 test.pl';
+    
+    // Update General menu submenu items (常规菜单下的子菜单)
+    if Assigned(MMS_server_internet_status) then
+      MMS_server_internet_status.Caption := '服务器互联网状态';
+    if Assigned(MMS_php_mail_msmtp) then
+      MMS_php_mail_msmtp.Caption := '邮件工具 msmtp';
+    if Assigned(MMS_edit_uniformserver_pac) then
+      MMS_edit_uniformserver_pac.Caption := '编辑 UniServer PAC 文件';
+    if Assigned(MMS_clean_up) then
+      MMS_clean_up.Caption := '清理/删除日志';
+    if Assigned(MMS_select_portable_browser) then
+      MMS_select_portable_browser.Caption := '便携式浏览器';
+    if Assigned(MMS_select_default_browser) then
+      MMS_select_default_browser.Caption := '默认浏览器';
+    
+    // Update PHP version submenu items (PHP版本选择子菜单)
+    if Assigned(MMSS_php70) then
+      MMSS_php70.Caption := 'PHP 7.0';
+    if Assigned(MMSS_php71) then
+      MMSS_php71.Caption := 'PHP 7.1';
+    if Assigned(MMSS_php72) then
+      MMSS_php72.Caption := 'PHP 7.2';
+    if Assigned(MMSS_php73) then
+      MMSS_php73.Caption := 'PHP 7.3';
+    if Assigned(MMSS_php74) then
+      MMSS_php74.Caption := 'PHP 7.4';
+    if Assigned(MMSS_php80) then
+      MMSS_php80.Caption := 'PHP 8.0';
+    if Assigned(MMSS_php81) then
+      MMSS_php81.Caption := 'PHP 8.1';
+    if Assigned(MMSS_php82) then
+      MMSS_php82.Caption := 'PHP 8.2';
+    if Assigned(MMSS_php83) then
+      MMSS_php83.Caption := 'PHP 8.3';
+    
+    // Update PHP configuration file submenu items (PHP配置文件选择子菜单)
+    if Assigned(MMSS_php_ini) then
+      MMSS_php_ini.Caption := 'PHP配置文件 php_test.ini (测试配置)';
+    if Assigned(MMSS_php_development) then
+      MMSS_php_development.Caption := 'PHP配置文件 php_development.ini (开发配置)';
+    if Assigned(MMSS_php_production) then
+      MMSS_php_production.Caption := 'PHP配置文件 php_production.ini (生产配置)';
+    
+    // Update startup pages submenu items (启动页面子菜单)
+    if Assigned(MMSS_display_at_startup_page1) then
+      MMSS_display_at_startup_page1.Caption := '启动时显示页面1';
+    if Assigned(MMSS_select_page_to_display1) then
+      MMSS_select_page_to_display1.Caption := '选择要显示的页面1';
+    if Assigned(MMSS_display_at_startup_page2) then
+      MMSS_display_at_startup_page2.Caption := '启动时显示页面2';
+    if Assigned(MMSS_select_page_to_display2) then
+      MMSS_select_page_to_display2.Caption := '选择要显示的页面2';
+  end;
+end;
 
 procedure TMain.Btn_start_apacheClick(Sender: TObject);
 var
@@ -585,10 +804,10 @@ begin
      USUC_PAGE_1   := page1;                            // Set var
      us_ini_set(USF_US_USER_INI,'USER','PAGE_1',page1); // save to config file
      us_update_server_state;                            // Update menus
-     us_MessageDlg('DtDNS Info','New PAGE was set', mtcustom,[mbOk],0); //Display information
+     us_MessageDlg('DtDNS 信息','新页面已设置', mtcustom,[mbOk],0); //Display information
    end
   Else
-      us_MessageDlg('DtDNS Info','Cancel clicked: No action taken', mtcustom,[mbOk],0);
+      us_MessageDlg('DtDNS 信息','已取消：未执行任何操作', mtcustom,[mbOk],0);
 
 end;
 
@@ -604,10 +823,10 @@ begin
       USUC_PAGE_2   := page2;                            // Set var
       us_ini_set(USF_US_USER_INI,'USER','PAGE_2',page2); // save to config file
       us_update_server_state;                            // Update menus
-       us_MessageDlg('DtDNS Info','New PAGE was set', mtcustom,[mbOk],0); //Display information
+       us_MessageDlg('DtDNS 信息','新页面已设置', mtcustom,[mbOk],0); //Display information
     end
    Else
-     us_MessageDlg('DtDNS Info','Cancel clicked: No action taken', mtcustom,[mbOk],0);
+     us_MessageDlg('DtDNS 信息','已取消：未执行任何操作', mtcustom,[mbOk],0);
 end;
 
 procedure TMain.MMSS_apache_access_logClick(Sender: TObject);
@@ -690,11 +909,11 @@ begin
        begin
         // Server Certificate Not Found
         str := '';
-        str := str +  'A server certificate was not found.' + sLineBreak + sLineBreak;
-        str := str +  'Would you like to continue and '     + sLineBreak;
-        str := str +  'generate a certificate and Key?';
+        str := str +  '未找到服务器证书。' + sLineBreak + sLineBreak;
+        str := str +  '您是否要继续并'     + sLineBreak;
+        str := str +  '生成证书和密钥？';
 
-        if us_MessageDlg('Server Certificate Not Found', str, mtConfirmation,[mbYes, mbNo],0) = mrYes then
+        if us_MessageDlg('未找到服务器证书', str, mtConfirmation,[mbYes, mbNo],0) = mrYes then
              server_cert_key_gen.show; //Display certificate key generator form
         end;
    end
@@ -751,11 +970,11 @@ begin
      us_proxy_file_port_update(old_apache_port,new_apache_port);      // Update PAC file with new port
 
      us_update_server_state;                                          // Update menus
-     us_MessageDlg('Apache info','Port was changed', mtcustom,[mbOk],0) ; // Display message
+     us_MessageDlg('Apache 信息','端口已更改', mtcustom,[mbOk],0) ; // Display message
      msg_restart_apache;                                              // If running display message
    end
  Else
-    us_MessageDlg('Apache info','Cancel clicked: No action taken', mtcustom,[mbOk],0) ; //Display information
+         us_MessageDlg('Apache 信息','已取消：未执行任何操作', mtcustom,[mbOk],0) ; //Display information
 
 end;
 
@@ -771,11 +990,11 @@ begin
      us_ini_set(USF_US_USER_INI,'USER','AP_SSL_PORT',UENV_AP_SSL_PORT);     // save to config file
      windows.SetEnvironmentVariable('AP_SSL_PORT',PCHAR(UENV_AP_SSL_PORT)); // Set environoment variable
      us_update_server_state;                                                // Update menus
-     us_MessageDlg('Apache Info','Port was changed', mtcustom,[mbOk],0) ;       // Display message
+     us_MessageDlg('Apache 信息','端口已更改', mtcustom,[mbOk],0) ;       // Display message
      msg_restart_apache;                                                    // If running display message
    end
  Else
-    us_MessageDlg('Apache Info','Cancel clicked: No action taken', mtcustom,[mbOk],0) ; //Display message
+         us_MessageDlg('Apache 信息','已取消：未执行任何操作', mtcustom,[mbOk],0) ; //Display message
 
 end;
 
@@ -820,12 +1039,12 @@ begin
     USF_SSL_HTACCESS_BACK     :=  UENV_US_ROOTF_SSL+'\.htaccess_back';        // update path SSL Root htaccess backup file
     windows.SetEnvironmentVariable('US_ROOTF_SSL',PCHAR(UENV_US_ROOTF_SSL));  // Set environoment variable
 
-    us_MessageDlg('Apache Info','New Apache root-folder ssl set', mtcustom,[mbOk],0); //Display message
+         us_MessageDlg('Apache 信息','新的 Apache ssl 根文件夹已设置', mtcustom,[mbOk],0); //Display message
     us_update_server_state; // Update menus
     //----
     end
    Else
-     us_MessageDlg('Apache Info','Cancel clicked: No action taken', mtcustom,[mbOk],0) ; //Display information message
+     us_MessageDlg('Apache 信息','已取消：未执行任何操作', mtcustom,[mbOk],0) ; //Display information message
 
 end;
 
@@ -871,13 +1090,13 @@ begin
   USF_WWW_HTACCESS_BACK     :=  UENV_US_ROOTF_WWW+'\.htaccess_back';        // update WWW Root htaccess backup file
   windows.SetEnvironmentVariable('US_ROOTF_WWW',PCHAR(UENV_US_ROOTF_WWW));  // Set environoment variable
 
-  us_MessageDlg('Apache Info','New Apache root-folder www set', mtcustom,[mbOk],0); //Display message
+       us_MessageDlg('Apache 信息','新的 Apache www 根文件夹已设置', mtcustom,[mbOk],0); //Display message
   us_update_server_state; // Update menus
 
    //---
    end
   Else
-    us_MessageDlg('Apache Info','Cancel clicked: No action taken', mtcustom,[mbOk],0); //Display message
+         us_MessageDlg('Apache 信息','已取消：未执行任何操作', mtcustom,[mbOk],0); //Display message
 
 end;
 
@@ -1010,12 +1229,12 @@ begin
       //Update internal as if read from config file - expanded
       UENV_US_ROOTF_SSL := UENV_US_ROOTF_SSL_temp;    // Absolute path
 
-      us_MessageDlg('Apache Info','New Apache root-folder ssl set', mtcustom,[mbOk],0) ; //Display message
+      us_MessageDlg('Apache 信息','新的 Apache ssl 根文件夹已设置', mtcustom,[mbOk],0) ; //Display message
       us_update_server_state;                         // Update menus
 
     end
    Else
-     us_MessageDlg('Apache Info','Cancel clicked: No action taken', mtcustom,[mbOk],0) ; //Display message
+     us_MessageDlg('Apache 信息','已取消：未执行任何操作', mtcustom,[mbOk],0) ; //Display message
 
 end;
 
@@ -1048,6 +1267,9 @@ var
 begin
   new_mysql_pwd:='';
   Timer1.Enabled := False;          // Disable timer
+  
+  // Initialize Chinese interface
+  InitializeChineseInterface;
 
 If us_application_is_runable Then   // A draconian check. If a space found in path
                                     // or incorrect location UniController is terminated.
@@ -1067,10 +1289,10 @@ If us_application_is_runable Then   // A draconian check. If a space found in pa
     and Not MySqlRunning                  // Cannot change password if running
    Then
     begin  // Set new root password or allow user to cancel
-      If us_get_new_pwd(MY_PWD,new_mysql_pwd) Then   // Get new password. If set change password.
-        mysql_change_root_password(new_mysql_pwd)    // Change existing password
-      Else
-         us_MessageDlg(US_MYMAR_TXT+' Info','Cancel clicked: No action taken', mtcustom,[mbOk],0); //Display information message
+       If us_get_new_pwd(MY_PWD,new_mysql_pwd) Then   // Get new password. If set change password.
+   mysql_change_root_password(new_mysql_pwd)    // Change existing password
+ Else
+   us_MessageDlg(US_MYMAR_TXT+' 信息','已点击取消：未执行任何操作', mtcustom,[mbOk],0); //Display information message
     end;
 
   us_set_icon_and_hover_text;      // Set icon displayed and hover text based on ServerType in config file
@@ -1299,13 +1521,13 @@ end;
 procedure TMain.MMS_force_unix_shebangClick(Sender: TObject);
 begin
    force_shebang_update(US_UNIX_SHEBANG); // Update to Unix shebang in all perl scripts
-   us_MessageDlg('Perl Info','Perl Shebangs have been updated', mtcustom,[mbOk],0) ; //Display information message
+   us_MessageDlg('Perl 信息','Perl Shebangs 已更新', mtcustom,[mbOk],0) ; //Display information message
 end;
 
 procedure TMain.MMS_force_windows_shebangClick(Sender: TObject);
 begin
  force_shebang_update(US_WINDOWS_SHEBANG); // Update to Windows shebang in all perl scripts
-    us_MessageDlg('Perl Info','Perl Shebangs have been updated', mtcustom,[mbOk],0) ; //Display information message
+    us_MessageDlg('Perl 信息','Perl Shebangs 已更新', mtcustom,[mbOk],0) ; //Display information message
 end;
 
 procedure TMain.MMS_hostsClick(Sender: TObject);
@@ -1330,10 +1552,10 @@ begin
          us_ini_set(USF_US_USER_INI,'USER','MYSQL_TCP_PORT',UENV_MYSQL_TCP_PORT);     // save to config file
          windows.SetEnvironmentVariable('MYSQL_TCP_PORT',PCHAR(UENV_MYSQL_TCP_PORT)); // Set environoment variable
          us_update_server_state;                                                      // Update menus
-         us_MessageDlg(US_MYMAR_TXT+' Info','Port was changed', mtcustom,[mbOk],0) ; //Display information message
+         us_MessageDlg(US_MYMAR_TXT+' 信息','端口已更改', mtcustom,[mbOk],0) ; //Display information message
        end
       Else
-        us_MessageDlg(US_MYMAR_TXT+' Info','Cancel clicked: No action taken', mtcustom,[mbOk],0) ; //Display information message
+        us_MessageDlg(US_MYMAR_TXT+' 信息','已取消：未执行任何操作', mtcustom,[mbOk],0) ; //Display information message
     end;
 end;
 
@@ -1345,7 +1567,7 @@ begin
  If us_get_new_pwd(MY_PWD,new_mysql_pwd) Then   // Get new password. If set change password.
    mysql_change_root_password(new_mysql_pwd)    // Change existing password
  Else
-   us_MessageDlg(US_MYMAR_TXT+' Info','Cancel clicked: No action taken', mtcustom,[mbOk],0); //Display information message
+   us_MessageDlg(US_MYMAR_TXT+' 信息','已点击取消：未执行任何操作', mtcustom,[mbOk],0); //Display information message
 end;
 
 procedure TMain.MMS_mysql_create_userClick(Sender: TObject);

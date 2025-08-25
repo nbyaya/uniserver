@@ -135,7 +135,13 @@ end;
 
 procedure Tmysql_database_restore.FormShow(Sender: TObject);
 begin
-  mysql_database_restore.Caption := US_MYMAR_TXT+' Database Restore'; // MySQL Database Restore
+     // 汉化界面
+   mysql_database_restore.Caption := US_MYMAR_TXT+' 数据库恢复';
+   GroupBox1.Caption := '选择要恢复的备份文件';
+   Btn_clear.Caption := '清除';
+   Btn_help.Caption := '帮助';
+   Btn_restore.Caption := '恢复备份';
+  
   mysql_database_restore_init;   // Set initial conditions
   display_database_backup_files; // Get and display backup files
 end;
@@ -161,7 +167,7 @@ begin
   run_mysql_db_restore(db_file_name);    // Run restore
   mysql_database_restore_init;           // Reset initial conditions
 
-  showmessage('Restore complete');
+  showmessage('恢复完成');
 end;
 
 procedure Tmysql_database_restore.Btn_helpClick(Sender: TObject);
@@ -169,10 +175,10 @@ var
  str:string;
 begin
   str :='';
-  str := str +  'This menu item restores a '+US_MYMAR_TXT+' database backup.'           + sLineBreak+ sLineBreak;
-  str := str +  'Select a file from the list and click the Restore button.'  + sLineBreak;
+  str := str +  '此菜单项用于恢复 '+US_MYMAR_TXT+' 数据库备份。'           + sLineBreak+ sLineBreak;
+  str := str +  '从列表中选择一个文件，然后点击恢复按钮。'  + sLineBreak;
 
-  us_MessageDlg('Create a '+US_MYMAR_TXT+' database backup - Help ', str, mtInformation,[mbOk],0) ; //Display message
+  us_MessageDlg('创建 '+US_MYMAR_TXT+' 数据库备份 - 帮助 ', str, mtInformation,[mbOk],0) ; //Display message
 
 end;
 

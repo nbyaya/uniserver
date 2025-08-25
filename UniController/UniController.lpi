@@ -18,7 +18,8 @@
       <Icon Value="0"/>
     </General>
     <i18n>
-      <EnableI18N LFM="False"/>
+      <EnableI18N LFM="True"/>
+      <OutDir Value="languages"/>
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
@@ -28,7 +29,7 @@
       <StringTable Comments="Run Uniform Server as standard programs" CompanyName="Uniform Server" FileDescription="UniController for Uniform Server" ProductName="UniController" ProductVersion="2.5.5"/>
     </VersionInfo>
     <BuildModes Count="3">
-      <Item1 Name="Default" Default="True"/>
+      <Item1 Name="Default"/>
       <Item2 Name="Debug">
         <CompilerOptions>
           <Version Value="11"/>
@@ -71,7 +72,7 @@
           </Linking>
         </CompilerOptions>
       </Item2>
-      <Item3 Name="Release">
+      <Item3 Name="Release" Default="True">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>

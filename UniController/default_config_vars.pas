@@ -19,8 +19,8 @@ const
   UNICONTROLLER_VERSION = 'v2.5.5';
   ZENDOPCACHE_DLL       = 'php_opcache.dll';
 
-  Btn_text_enable_ssl   = 'Enable SSL (Currently Disabled)';
-  Btn_text_disable_ssl  = 'Disable SSL (Currently Enabled)';
+  Btn_text_enable_ssl   = '启用 SSL (当前已禁用)';
+  Btn_text_disable_ssl  = '禁用 SSL (当前已启用)';
   VERSION_FILE_ADDRESS  = 'http://www.uniformserver.com/system/.version';
 
   //Portable Web browser Pale Moon
@@ -383,8 +383,8 @@ var
 
 begin
  //Button text
- START_AP            := 'Start Apache';  // Start Apache
- STOP_AP             := 'Stop Apache';   // Stop Apache
+ START_AP            := '启动 Apache';  // Start Apache
+ STOP_AP             := '停止 Apache';   // Stop Apache
 
 
  //=== Create Top level folder -root paths. Note: Last slash removed.
@@ -845,8 +845,8 @@ begin
  //=== End MySQL or MariaDB configuration file us_opt.ini
 
  //Button text
- START_MY            := 'Start '+US_MYMAR_TXT;   // Start MySQL or Start MariaDB
- STOP_MY             := 'Stop  '+US_MYMAR_TXT;   // Start MySQL or Start MariaDB
+ START_MY            := '启动 '+US_MYMAR_TXT;   // Start MySQL or Start MariaDB
+ STOP_MY             := '停止  '+US_MYMAR_TXT;   // Start MySQL or Start MariaDB
 
  //=== SET ENVIRONOMENT VARIABLES =======
 

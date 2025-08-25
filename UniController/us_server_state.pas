@@ -57,14 +57,14 @@ begin
 
  //--MySQL MySQL/MariaDB button, menu and window Text
  Main.MM_mysql.Caption              := US_MYMAR_TXT;                              // MySQL
- Main.MMS_mysql_change_port.Caption := 'Change '+US_MYMAR_TXT+' port';            // Change MySQL port
- Main.MMS_mysql_change_pwd.Caption  := 'Change '+US_MYMAR_TXT+' password';        // Change MySQL root password
- Main.MMS_mysql_create_user.Caption := 'Create restricted '+US_MYMAR_TXT+' user'; // Create restricted MySQL user
- Main.MMS_mysql_edit_user.Caption   := 'Edit restricted '+US_MYMAR_TXT+' user';   // Edit restricted MySQL user
- Main.MMS_mysql_error_log.Caption   := US_MYMAR_TXT+' error log';                 // MySQL error log
+ Main.MMS_mysql_change_port.Caption := '修改 '+US_MYMAR_TXT+' 端口';            // Change MySQL port
+ Main.MMS_mysql_change_pwd.Caption  := '修改 '+US_MYMAR_TXT+' 密码';        // Change MySQL root password
+ Main.MMS_mysql_create_user.Caption := '创建限制 '+US_MYMAR_TXT+' 用户'; // Create restricted MySQL user
+ Main.MMS_mysql_edit_user.Caption   := '编辑限制 '+US_MYMAR_TXT+' 用户';   // Edit restricted MySQL user
+ Main.MMS_mysql_error_log.Caption   := US_MYMAR_TXT+' 错误日志';                 // MySQL error log
 
- Main.GB_mysql_utilities.Caption    := US_MYMAR_TXT+' Utilities';                 // MySQL Utilities
- Main.Btn_mysql_console.Caption     := US_MYMAR_TXT + ' Console';                 // MySQL Console
+ Main.GB_mysql_utilities.Caption    := US_MYMAR_TXT+' 工具';                 // MySQL Utilities
+ Main.Btn_mysql_console.Caption     := US_MYMAR_TXT + ' 控制台';                 // MySQL Console
 
  //--MySQL option buttons
  //-- Note: Btn_opt3 Default button phpMyBackupPro (Bottom-right)

@@ -62,6 +62,9 @@ strFill:string;
 MaxLineLength:integer; // Length of first part
 
 begin
+  // 汉化界面
+  Caption := 'Apache 模块启用/禁用';
+
   Apache_Modules_CheckListBox.ItemIndex := -1;  // Clear selection
   Apache_Modules_CheckListBox.Items.Clear;      // Clear list box
 

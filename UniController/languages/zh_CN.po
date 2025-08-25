@@ -1,0 +1,1664 @@
+# Chinese translations for UniController
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# Main form translations
+msgid "Start"
+msgstr "启动"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Apache"
+msgstr "Apache"
+
+msgid "MySQL"
+msgstr "MySQL"
+
+msgid "PHP"
+msgstr "PHP"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Running"
+msgstr "运行中"
+
+msgid "Stopped"
+msgstr "已停止"
+
+msgid "Configuration"
+msgstr "配置"
+
+msgid "Tools"
+msgstr "工具"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Exit"
+msgstr "退出"
+
+msgid "Server Control Panel"
+msgstr "服务器控制面板"
+
+msgid "Web Server"
+msgstr "Web服务器"
+
+msgid "Database Server"
+msgstr "数据库服务器"
+
+msgid "Scripting Language"
+msgstr "脚本语言"
+
+# Menu items
+msgid "File"
+msgstr "文件"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "View"
+msgstr "视图"
+
+msgid "Server"
+msgstr "服务器"
+
+msgid "Database"
+msgstr "数据库"
+
+msgid "Tools"
+msgstr "工具"
+
+msgid "Window"
+msgstr "窗口"
+
+msgid "Help"
+msgstr "帮助"
+
+# Common buttons
+msgid "OK"
+msgstr "确定"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+# Error messages
+msgid "Error"
+msgstr "错误"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Information"
+msgstr "信息"
+
+msgid "Confirmation"
+msgstr "确认"
+
+msgid "Please wait..."
+msgstr "请稍候..."
+
+msgid "Operation completed successfully"
+msgstr "操作成功完成"
+
+msgid "Operation failed"
+msgstr "操作失败"
+
+msgid "File not found"
+msgstr "文件未找到"
+
+msgid "Access denied"
+msgstr "访问被拒绝"
+
+msgid "Invalid parameter"
+msgstr "参数无效"
+
+# Server specific
+msgid "Apache Start"
+msgstr "启动Apache"
+
+msgid "Apache Stop"
+msgstr "停止Apache"
+
+msgid "MySQL Start"
+msgstr "启动MySQL"
+
+msgid "MySQL Stop"
+msgstr "停止MySQL"
+
+msgid "All Servers Start"
+msgstr "启动所有服务器"
+
+msgid "All Servers Stop"
+msgstr "停止所有服务器"
+
+msgid "Restart All Servers"
+msgstr "重启所有服务器"
+
+# Database operations
+msgid "Backup Database"
+msgstr "备份数据库"
+
+msgid "Restore Database"
+msgstr "恢复数据库"
+
+msgid "Create Database"
+msgstr "创建数据库"
+
+msgid "Delete Database"
+msgstr "删除数据库"
+
+msgid "Manage Users"
+msgstr "管理用户"
+
+# Tools menu
+msgid "PHP Info"
+msgstr "PHP信息"
+
+msgid "MySQL Admin"
+msgstr "MySQL管理"
+
+msgid "File Manager"
+msgstr "文件管理器"
+
+msgid "Terminal"
+msgstr "终端"
+
+msgid "System Info"
+msgstr "系统信息"
+
+# Status messages
+msgid "Ready"
+msgstr "就绪"
+
+msgid "Initializing..."
+msgstr "正在初始化..."
+
+msgid "Starting servers..."
+msgstr "正在启动服务器..."
+
+msgid "Stopping servers..."
+msgstr "正在停止服务器..."
+
+msgid "Processing..."
+msgstr "正在处理..."
+
+msgid "Complete"
+msgstr "完成"
+
+# Version info
+msgid "Version"
+msgstr "版本"
+
+msgid "Build"
+msgstr "构建"
+
+msgid "Copyright"
+msgstr "版权"
+
+msgid "License"
+msgstr "许可证"
+
+msgid "Homepage"
+msgstr "主页"
+
+msgid "Documentation"
+msgstr "文档"
+
+msgid "Support"
+msgstr "支持"
+
+# Network related
+msgid "Localhost"
+msgstr "本地主机"
+
+msgid "Port"
+msgstr "端口"
+
+msgid "IP Address"
+msgstr "IP地址"
+
+msgid "Hostname"
+msgstr "主机名"
+
+msgid "Domain"
+msgstr "域名"
+
+msgid "SSL"
+msgstr "SSL"
+
+msgid "HTTPS"
+msgstr "HTTPS"
+
+# File operations
+msgid "Open"
+msgstr "打开"
+
+msgid "Save As"
+msgstr "另存为"
+
+msgid "New"
+msgstr "新建"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Rename"
+msgstr "重命名"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Paste"
+msgstr "粘贴"
+
+msgid "Cut"
+msgstr "剪切"
+
+msgid "Select All"
+msgstr "全选"
+
+# Common phrases
+msgid "Name"
+msgstr "名称"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Size"
+msgstr "大小"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Author"
+msgstr "作者"
+
+msgid "Created"
+msgstr "创建时间"
+
+msgid "Modified"
+msgstr "修改时间"
+
+msgid "Enabled"
+msgstr "已启用"
+
+msgid "Disabled"
+msgstr "已禁用"
+
+msgid "Active"
+msgstr "活动"
+
+msgid "Inactive"
+msgstr "非活动"
+
+msgid "Online"
+msgstr "在线"
+
+msgid "Offline"
+msgstr "离线"
+
+msgid "Public"
+msgstr "公开"
+
+msgid "Private"
+msgstr "私有"
+
+msgid "Secure"
+msgstr "安全"
+
+msgid "Unsecure"
+msgstr "不安全"
+
+msgid "Valid"
+msgstr "有效"
+
+msg极 "Invalid"
+msgstr "无效"
+
+msgid "Success"
+msgstr "成功"
+
+msgid "Failure"
+msgstr "失败"
+
+msgid "True"
+msgstr "真"
+
+msgid "False"
+msgstr "假"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+msgid "On"
+msgstr "开"
+
+msgid "Off"
+msgstr "关"
+
+msgid "Up"
+msgstr "上"
+
+msgid "Down"
+msgstr "下"
+
+msgid "Left"
+msgstr "左"
+
+msgid "Right"
+msgstr "右"
+
+msgid "Top"
+极str "顶部"
+
+msgid "Bottom"
+msgstr "底部"
+
+msgid "Center"
+msgstr "居中"
+
+msgid "Front"
+msgstr "前面"
+
+msgid "Back"
+msgstr "后面"
+
+msgid "Inside"
+msgstr "内部"
+
+msgid "Outside"
+msgstr "外部"
+
+msgid "Before"
+msgstr "之前"
+
+msgid "After"
+msgstr "之后"
+
+msgid "First"
+msgstr "第一"
+
+msgid "Last"
+msgstr "最后"
+
+msgid "Next"
+msgstr "下一个"
+
+msgid "Previous"
+msgstr "上一个"
+
+msgid "Begin"
+msgstr "开始"
+
+msgid "End"
+msgstr "结束"
+
+msgid "Start"
+msgstr "开始"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Pause"
+msgstr "暂停"
+
+msgid "Resume"
+msgstr "继续"
+
+msgid "Refresh"
+msgstr "刷新"
+
+msgid "Reload"
+msgstr "重新加载"
+
+msgid "Restart"
+msgstr "重启"
+
+msgid "Shutdown"
+msgstr "关机"
+
+msgid "Login"
+msgstr "登录"
+
+msgid "Logout"
+msgstr "注销"
+
+msgid "Register"极str "注册"
+
+msgid "Unregister"
+msgstr "取消注册"
+
+msgid "Subscribe"
+msgstr "订阅"
+
+msgid "Unsubscribe"
+msgstr "取消订阅"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "Disable"
+msgstr "禁用"
+
+msgid "Show"
+msgstr "显示"
+
+msgid "Hide"
+msgstr "隐藏"
+
+msgid "Expand"
+msgstr "展开"
+
+msgid "Collapse"
+msgstr "折叠"
+
+msgid "Maximize"
+msgstr "最大化"
+
+msgid "Minimize"
+msgstr "最小化"
+
+msgid "Restore"
+msgstr "还原"
+
+msgid "Move"
+msgstr "移动"
+
+msgid "Resize"
+msgstr "调整大小"
+
+msgid "Align"
+msgstr "对齐"
+
+msgid "Sort"
+msgstr "排序"
+
+msgid "Filter"
+msgstr "筛选"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "Find"
+msgstr "查找"
+
+msgid "Replace"
+msgstr "替换"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Insert"
+msgstr "插入"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Clear"
+msgstr "清除"
+
+msgid "Reset"
+msgstr "重置"
+
+msgid "Default"
+msgstr "默认"
+
+msgid "Custom"
+msgstr "自定义"
+
+msgid "Automatic"
+msgstr "自动"
+
+msgid "Manual"
+msgstr "手动"
+
+msgid "Simple"
+msgstr "简单"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Basic"
+msgstr "基本"\极
+msgid "Expert"
+msgstr "专家"
+
+msgid "Normal"
+极str "普通"
+
+msgid "Special"
+msgstr "特殊"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Specific"
+msgstr "特定"
+
+msgid "Local"
+msgstr "本地"
+
+msgid "Remote"
+msgstr "远程"
+
+msgid "Internal"
+msgstr "内部"
+
+msgid "External"
+msgstr "外部"
+
+msgid "Physical"
+msgstr "物理"\极
+msgid "Virtual"
+msgstr "虚拟"
+
+msgid "Real"
+msgstr "真实"
+
+msgid "Simulated"
+msgstr "模拟"
+
+msgid "Test"
+msgstr "测试"
+
+msgid "Production"
+msgstr "生产"
+
+msgid "Development"
+msgstr "开发"
+
+msgid "Staging"
+msgstr "预发布"
+
+msgid "Debug"
+msgstr "调试"
+
+msgid "Release"
+msgstr "发布"
+
+msgid "Beta"
+msgstr "测试版"
+
+msgid "Alpha"
+msgstr "内测版"
+
+msgid "Stable"
+msgstr "稳定版"
+
+msgid "Unstable"
+msgstr "不稳定版"
+
+msgid "Official"
+msgstr "官方"
+
+msgid "Unofficial"
+msgstr "非官方"
+
+msgid "Supported"
+msgstr "支持"
+
+msgid "Unsupported"
+msgstr "不支持"
+
+msgid "Compatible"
+msgstr "兼容"
+
+msgid "Incompatible"
+msgstr "不兼容"
+
+msgid "Available"
+msgstr "可用"
+
+msgid "Unavailable"
+msgstr "不可用"
+
+msgid "Free"
+msgstr "免费"
+
+msgid "Paid"
+msgstr "付费"
+
+msgid "Open Source"
+msgstr "开源"
+
+msgid "Proprietary"
+msgstr "专有"
+
+msgid "Standard"
+msgstr "标准"\极
+msgid "Enterprise"
+msgstr "企业版"
+
+msgid "Professional"
+msgstr "专业版"
+
+msgid "Personal"
+msgstr "个人版"
+
+msgid "Home"
+msgstr "家庭版"
+
+msgid "Business"
+msgstr "商业版"
+
+msgid "Education"
+msgstr "教育版"
+
+msgid "Trial"
+msgstr "试用版"
+
+msgid "Full"
+msgstr "完整版"
+
+msgid "Lite"
+msgstr "精简版"
+
+msgid "Demo"
+msgstr "演示版"
+
+msgid "Shareware"
+msgstr "共享软件"
+
+msgid "Freeware"
+msgstr "免费软件"
+
+msgid "Commercial"
+msgstr "商业软件"
+
+msgid "Non-commercial"
+msgstr "非商业软件"
+
+msgid "Public Domain"
+msgstr "公共领域"
+
+msgid "Copyrighted"
+msgstr "版权所有"
+
+msgid "Licensed"
+msg极 "已授权"
+
+msgid "Unlicensed"
+msgstr "未授权"
+
+msgid "Registered"
+msgstr "已注册"
+
+msgid "Unregistered"
+msgstr "未注册"
+
+msgid "Activated"
+msgstr "已激活"
+
+msgid "Deactivated"
+msgstr "已停用"
+
+msgid "Validated"
+msgstr "已验证"
+
+msgid "Invalidated"
+msgstr "已失效"
+
+msgid "Approved"
+msgstr "已批准"
+
+msgid "Rejected"
+msgstr "已拒绝"
+
+msgid "Accepted"
+msgstr "已接受"
+
+msgid "Declined"
+msgstr "已拒绝"
+
+msgid "Confirmed"
+msgstr "已确认"
+
+msgid "Unconfirmed"
+msgstr "未确认"
+
+msgid "Verified"
+msgstr "已验证"
+
+msgid "Unverified"
+msgstr "未验证"
+
+msgid "Authenticated"
+msgstr "已认证"
+
+msgid "Unauthenticated"
+msgstr "未认证"
+
+msgid "Authorized"
+msgstr "已授权"
+
+msgid "Unauthorized"
+msgstr "未授权"
+
+msgid "Permitted"
+msgstr "允许"
+
+msgid "Prohibited"
+msgstr "禁止"
+
+msgid "Allowed"
+msgstr "允许"
+
+msgid "Denied"
+msgstr "拒绝"
+
+msgid "Granted"
+msgstr "授予"
+
+msgid "Revoked"
+msgstr "撤销"
+
+msgid "Issued"
+msgstr "已签发"
+
+msgid "Expired"
+msgstr "已过期"
+
+msgid "Renewed"
+msgstr "已续期"
+
+msgid "Suspended"
+msgstr "已暂停"
+
+msgid "Terminated"
+msgstr "已终止"
+
+msgid "Completed"
+msgstr "已完成"
+
+msgid "Incomplete"
+msgstr "未完成"
+
+msgid "Finished"
+msgstr "已完成"
+
+msgid "Unfinished"
+msgstr "未完成"
+
+msgid "Successful"
+msgstr "成功"
+
+msgid "Unsuccessful"
+msgstr "失败"
+
+msgid "Perfect"
+msgstr "完美"
+
+msgid "Imperfect"
+msgstr "不完美"
+
+msgid "Optimal"
+msgstr "最佳"
+
+msgid "Suboptimal"
+msgstr "次优"
+
+msgid "Ideal"
+msgstr "理想"
+
+msgid "Non-ideal"
+msgstr "非理想"
+
+msgid "Excellent"
+msgstr "优秀"
+
+msgid "Poor"极str "差"
+
+msgid "Good"
+msgstr "好"
+
+msgid "Bad"
+msgstr "坏"
+
+msgid "Better"
+msgstr "更好"
+
+msgid "Worse"
+msgstr "更差"
+
+msgid "Best"
+msgstr "最好"
+
+msgid "Worst"
+msgstr "最差"
+
+msgid "Fast"
+msgstr "快"
+
+msgid "Slow"
+msgstr "慢"\极
+msgid "Faster"
+msgstr "更快"
+
+msgid "Slower"
+msgstr "更慢"
+
+msgid "Fastest"
+msgstr "最快"
+
+msgid "Slowest"
+msgstr "最慢"
+
+msgid "Easy"
+msgstr "容易"
+
+msgid "Hard"
+msgstr "困难"
+
+msgid "Easier"
+msgstr "更容易"\极
+msgid "Harder"
+msgstr "更困难"
+
+msgid "Easiest"
+msgstr "最容易"
+
+msgid "Hardest"
+msgstr "最困难"
+
+msgid "Simple"
+msgstr "简单"
+
+msgid "Complex"
+msgstr "复杂"
+
+msgid "Simpler"
+msgstr "更简单"
+
+msgid "More complex"
+msgstr "更复杂"
+
+msgid "Simplest"
+msgstr "最简单"
+
+msgid "Most complex"
+msgstr "最复杂"
+
+msgid "Small"
+msgstr "小"
+
+msgid "Large"
+msgstr "大"
+
+msgid "Smaller"
+msgstr "更小"
+
+msgid "Larger"
+msgstr "更大"
+
+msgid "Smallest"
+msgstr "最小"
+
+msgid "Largest"
+msgstr "最大"
+
+msgid "Short"
+msgstr "短"
+
+msg极 "Long"
+msgstr "长"
+
+msgid "Shorter"
+msgstr "更短"
+
+msgid "Longer"
+msgstr "更长"
+
+msgid "Shortest"
+msgstr "最短"\极
+msgid "Longest"
+极str "最长"
+
+msgid "High"
+msgstr "高"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Higher"
+msgstr "更高"
+
+msgid "Lower"
+msgstr "更低"
+
+msgid "Highest"
+msgstr "最高"
+
+msgid "Lowest"
+msgstr "最低"
+
+msgid "Heavy"
+msgstr "重"
+
+msgid "Light"
+msgstr "轻"
+
+msgid "Heavier"
+msgstr "更重"
+
+msgid "Lighter"
+msgstr "更轻"
+
+msgid "Heaviest"
+msgstr "最重"
+
+msgid "Lightest"
+msgstr "最轻"
+
+msgid "Full"
+msgstr "满"
+
+msgid "Empty"
+msgstr "空"
+
+msgid "Fuller"
+msgstr "更满"
+
+msgid "Emptier"
+msgstr "更空"
+
+msgid "Fullest"
+msgstr "最满"
+
+msgid "Emptiest"
+msgstr "最空"
+
+msgid "Wide"
+msgstr "宽"
+
+msgid "Narrow"
+msgstr "窄"
+
+msgid "Wider"
+msgstr "更宽"
+
+msgid "Narrower"极str "更窄"
+
+msgid "Widest"
+msgstr "最宽"
+
+msgid "Narrowest"
+msgstr "最窄"
+
+msgid "Deep"
+msgstr "深"
+
+msgid "Shallow"
+msgstr "浅"
+
+msgid "Deeper"
+msgstr "更深"
+
+msgid "Shallower"
+msgstr "更浅"
+
+msgid "Deepest"
+msgstr "最深"
+
+msgid "Shallowest"
+msgstr "最浅"
+
+msgid "Strong"
+msgstr "强"
+
+msgid "Weak"
+msgstr "弱"极
+msgid "Stronger"
+msgstr "更强"
+
+msgid "Weaker"
+msgstr "更弱"
+
+极id "Strongest"
+msgstr "最强"
+
+msgid "Weakest"
+msgstr "最弱"
+
+msgid "Hot"
+msgstr "热"
+
+msgid "Cold"
+msgstr "冷"
+
+msgid "Hotter"
+msgstr "更热"
+
+msgid "Colder"
+msgstr "更冷"
+
+msgid "Hottest"
+msgstr "最热"
+
+msgid "Coldest"
+msgstr "最冷"
+
+msgid "Warm"
+msgstr "温暖"
+
+msgid "Cool"
+msgstr "凉爽"
+
+msgid "Warmer"
+msgstr "更温暖"
+
+msgid "Cooler"
+msgstr "更凉爽"
+
+msgid "Warmest"
+msgstr "最温暖"
+
+msgid "Coolest"
+msgstr "最凉爽"
+
+msgid "Dry"
+msgstr "干燥"
+
+msgid "Wet"
+msgstr "湿润"
+
+msgid "Drier"
+msgstr "更干燥"
+
+msgid "Wetter"
+msgstr "更湿润"
+
+msgid "Driest"
+msgstr "最干燥"
+
+msgid "Wettest"
+msgstr "最湿润"
+
+msgid "Clean"
+msgstr "干净"
+
+msgid "Dirty"
+msgstr "脏"
+
+msgid "Cleaner"
+msgstr "更干净"
+
+msgid "Dirtier"
+msgstr "更脏"
+
+msgid "Cleanest"
+msgstr "最干净"
+
+msgid "Dirtiest极"
+msgstr "最脏"
+
+msgid "New"
+msgstr "新"
+
+msgid "Old"
+msgstr "旧"
+
+msgid "Newer"
+msgstr "更新"
+
+msgid "Older"
+msgstr "更旧"
+
+msgid "Newest"
+msgstr "最新"
+
+msgid "Oldest"
+msgstr "最旧"
+
+msgid "Young"
+msgstr "年轻"
+
+msgid "Aged"
+msgstr "年长"
+
+msgid "Younger"
+msgstr "更年轻"
+
+msgid "Older"
+msgstr "更年长"
+
+msgid "Youngest"
+msgstr "最年轻"
+
+msgid "Oldest"
+msgstr "最年长"
+
+msgid "Modern"
+msgstr "现代"
+
+msgid "Ancient"
+msgstr "古老"
+
+msgid "More modern"
+msgstr "更现代"
+
+msgid "More ancient"
+msgstr "更古老"
+
+msgid "Most modern"\极str "最现代"
+
+msgid "Most ancient"
+msgstr "最古老"
+
+msgid "Current"
+msgstr "当前"
+
+msgid "Previous"
+msgstr "先前"
+
+msgid "Next"
+msgstr "下一个"
+
+msgid "First"
+msgstr "第一"
+
+msgid "Last"
+msgstr "最后"
+
+msgid "Early"
+msgstr "早"
+
+msgid "Late"
+msgstr "晚"
+
+msgid "Earlier"
+msgstr "更早"\极
+msgid "Later"
+msgstr "更晚"
+
+msgid "Earliest"
+msgstr "最早"
+
+msgid "Latest"
+msgstr "最晚"
+
+msgid "Soon"
+msgstr "很快"
+
+msgid "Never"
+msgstr "从不"
+
+msgid "Always"
+msgstr "总是"
+
+msgid "Sometimes"
+msgstr "有时"
+
+msgid "Often"
+msgstr "经常"
+
+msgid "Rarely"
+msgstr "很少"
+
+msgid "Frequently"
+msgstr "频繁"
+
+msgid "Infrequently"
+msgstr "不频繁"
+
+msgid "Regularly"
+msgstr "定期"
+
+msgid "Irregularly"
+msgstr "不定期"
+
+msgid "Usually"
+msgstr "通常"
+
+msgid "Unusually"
+msgstr "不通常"
+
+msgid "Normally"
+msgstr "正常"
+
+msgid "Abnormally"
+msgstr "异常"
+
+msgid "Commonly"
+msgstr "常见"
+
+msgid "Uncommonly"
+msgstr "不常见"
+
+msgid "Generally"
+msgstr "一般"
+
+msgid "Specifically"
+msgstr "具体"
+
+msgid "Particularly"
+msgstr "特别"
+
+msgid "Especially"
+msgstr "尤其"
+
+msgid "Mainly"
+msgstr "主要"
+
+msgid "Mostly"
+msgstr "大多"
+
+msgid "Partly"
+msgstr "部分"
+
+msgid "Fully"
+msgstr "完全"
+
+msgid "Completely"
+msgstr "完全"
+
+msgid "Totally"
+msgstr "完全"
+
+msgid "Entirely"
+msgstr "完全"
+
+msgid "Wholly"
+msgstr "完全"
+
+msgid "Partially"
+msgstr "部分"\极
+msgid "Incompletely"
+msgstr "不完全"
+
+msgid "Nearly"
+msgstr "几乎"
+
+msgid "Almost"
+msgstr "几乎"
+
+msgid "About"
+msgstr "大约"
+
+msgid "Approximately"
+msgstr "大约"
+
+msgid "Exactly"
+msgstr "精确"
+
+msgid "Precisely"
+msgstr "精确"
+
+msgid "Accurately"
+msgstr "准确"
+
+msgid "Inaccurately"
+msgstr "不准确"极
+msgid "Correctly"
+msgstr "正确"
+
+msgid "Incorrectly"
+msgstr "不正确"
+
+msgid "Properly"
+msgstr "适当"
+
+msgid "Improperly"
+msgstr "不适当"
+
+msgid "Suitably"
+msgstr "合适"
+
+msgid "Unsuitably"
+msgstr "不合适"
+
+msgid "Appropriately"
+msgstr "恰当"
+
+msgid "Inappropriately"
+msgstr "不恰当"
+
+msgid "Adequately"
+msgstr "充分"
+
+msgid "Inadequately"
+msgstr "不充分"
+
+msgid "Sufficiently"
+msgstr "足够"
+
+msgid "Insufficiently"
+msgstr "不足够"
+
+msgid "Effectively"
+msgstr "有效"
+
+msgid "Ineffectively"
+msgstr "无效"
+
+msgid "Efficiently"
+msgstr "高效"
+
+msgid "Inefficiently"
+msg极 "低效"
+
+msgid "Successfully"
+msgstr "成功"
+
+msgid "Unsuccessfully"极str "失败"
+
+msgid "Usefully"
+msgstr "有用"
+
+msgid "Uselessly"
+msgstr "无用"
+
+msgid "Helpfully"
+msgstr "有帮助"
+
+msgid "Unhelpfully"
+msgstr "无帮助"
+
+msgid "Beneficially"
+msgstr "有益"
+
+msgid "Harmfully"
+msgstr "有害"
+
+msgid "Advantageously"
+msgstr "有利"
+
+msgid "Disadvantageously"
+msgstr "不利"
+
+msgid "Profitably"
+msgstr "盈利"
+
+msgid "Unprofitably"
+msgstr "亏损"
+
+msgid "Gainfully"
+msgstr "有收益"
+
+msgid "Ungainfully"
+msgstr "无收益"
+
+msgid "Productively"
+msgstr "有生产力"
+
+极id "Unproductively"
+msgstr "无生产力"
+
+msgid "Constructively"
+msgstr "建设性"
+
+msgid "Destructively"
+msgstr "破坏性"
+
+msgid "Creatively"
+msgstr "创造性"
+
+msgid "Uncreatively"
+msgstr "无创造性"
+
+msgid "Innovatively"
+msgstr "创新"
+
+msgid "Traditionally"
+msgstr "传统"
+
+msgid "Conventionally"
+msgstr "常规"
+
+msgid "Unconventionally"
+msgstr "非常规"
+
+msgid "Standardly"
+msgstr "标准"
+
+msgid "Non-standardly"
+msgstr "非标准"
+
+msgid "Typically"
+msgstr "典型"
+
+msgid "Atypically"
+msgstr "非典型"
+
+msgid "Commonly"
+msgstr "常见"
+
+msgid "Uncommonly"
+msgstr "不常见"
+
+msgid "Rarely"
+msgstr "很少"
+
+msgid "Frequently"
+msgstr "频繁"
+
+msgid "Infrequently"
+msgstr "不频繁"
+
+msgid "Occasionally"
+msgstr "偶尔"
+
+msgid "Regularly"
+msgstr "定期"
+
+msgid "Irregularly"极str "不定期"
+
+msgid "Periodically"
+msgstr "周期性"
+
+msgid "Continuously"
+msgstr "连续"
+
+msgid "Intermittently"
+
+#: main_unit.pas:631
+msgid "MMS_acache_start_up_pages"
+msgstr "启动页面缓存"
+
+#: main_unit.pas:632
+msgid "MMS_acache_clear_cache"
+msgstr "清除缓存"
+
+#: main_unit.pas:633
+msgid "MMS_acache_refresh_cache"
+msgstr "刷新缓存"
+
+#: main_unit.pas:634
+msgid "MMS_acache_statistics"
+msgstr "缓存统计"
+
+#: main_unit.pas:635
+msgid "MMS_acache_settings"
+msgstr "缓存设置"
+
+#: main_unit.pas:636
+msgid "MMS_mysql_start"
+msgstr "启动MySQL"
+
+#: main_unit.pas:637
+msgid "MMS_mysql_stop"
+msgstr "停止MySQL"
+
+#: main_unit.pas:638
+msgid "MMS_mysql_restart"
+msgstr "重启MySQL"
+
+#: main_unit.pas:639
+msgid "MMS_mysql_config"
+msgstr "MySQL配置"
+
+#: main_unit.pas:640
+msgid "MMS_mysql_logs"
+msgstr "MySQL日志"
+
+#: main_unit.pas:641
+msgid "MMS_apache_start"
+msgstr "启动Apache"
+
+#: main_unit.pas:642
+msgid "MMS_apache_stop"
+msgstr "停止Apache"
+
+#: main_unit.pas:643
+msgid "MMS_apache_restart"
+msgstr "重启Apache"
+
+#: main_unit.pas:644
+msgid "MMS_apache_config"
+msgstr "Apache配置"
+
+#: main_unit.pas:645
+msgid "MMS_apache_logs"
+msgstr "Apache日志"
+
+#: main_unit.pas:646
+msgid "MMS_php_start"
+msgstr "启动PHP"
+
+#: main_unit.pas:647
+msgid "MMS_php_stop"
+msgstr "停止PHP"
+
+#: main_unit.pas:648
+msgid "MMS_php_restart"
+msgstr "重启PHP"
+
+#: main_unit.pas:649
+msgid "MMS_php_config"
+msgstr "PHP配置"
+
+#: main_unit.pas:650
+msgid "MMS_php_info"
+msgstr "PHP信息"
+
+#: main_unit.pas:651
+msgid "MMS_ssl_start"
+msgstr "启动SSL"
+
+#: main_unit.pas:652
+msgid "MMS_ssl_stop"
+msgstr "停止SSL"
+
+#: main_unit.pas:653
+msgid "MMS_ssl_restart"
+msgstr "重启SSL"
+
+#: main_unit.pas:654
+msgid "MMS_ssl_config"
+msgstr "SSL配置"
+
+#: main_unit.pas:655
+msgid "MMS_ssl_cert"
+msgstr "SSL证书"
+
+#: main_unit.pas:656
+msgid "MMS_tools"
+msgstr "工具"
+
+#: main_unit.pas:657
+msgid "MMS_tools_backup"
+msgstr "备份工具"
+
+#: main_unit.pas:658
+msgid "MMS_tools_restore"
+msgstr "恢复工具"
+
+#: main_unit.pas:659
+msgid "MMS_tools_cleanup"
+msgstr "清理工具"
+
+#: main_unit.pas:660
+msgid "MMS_help"
+msgstr "帮助"
+
+#: main_unit.pas:661
+msgid "MMS_help_about"
+msgstr "关于"
+
+#: main_unit.pas:662
+msgid "MMS_help_docs"
+msgstr "文档"
+
+#: main_unit.pas:663
+msgid "MMS_help_support"
+msgstr "支持"
+
+#: main_unit.pas:664
+msgid "MMS_exit"
+msgstr "退出"
+
+# Vhost management
+msgid "Create Apache Vhost"
+msgstr "创建 Apache 虚拟主机"
+
+msgid "Delete Apache Vhost"
+msgstr "删除 Apache 虚拟主机"
+
+msgid "Create Vhost"
+msgstr "创建虚拟主机"
+
+msgid "Delete Vhost"
+msgstr "删除虚拟主机"
+
+msgid "Root Folder Name:"
+msgstr "根目录名称："
+
+msgid "Server Name:"
+msgstr "服务器名称："
+
+msgid "Select Vhost to delete:"
+msgstr "选择要删除的虚拟主机："
+
+msgid "Cancel selection"
+msgstr "取消选择"
+
+# Interface elements from LFM
+msgid "Apache Utilities"
+msgstr "Apache 工具"
+
+msgid "Server Console"
+msgstr "服务器控制台"
+
+msgid "View www"
+msgstr "查看 WWW"
+
+msgid "View ssl"
+msgstr "查看 SSL"

@@ -106,7 +106,7 @@ begin
   If not us_valid_mysql_db_name(Edit1.Text) Then  // Validate input
   begin
     db_create := False;   //Can not create a db
-    us_MessageDlg('Error', 'Invalid or no database name.', mtWarning,[mbOk],0) ; // Please enter a database name
+    us_MessageDlg('错误', '无效或未输入数据库名称。', mtWarning,[mbOk],0) ; // Please enter a database name
   end
 
   else
@@ -122,7 +122,7 @@ begin
            if sList[i] = newDatabase then
             begin
                // Already exists inform user
-               us_MessageDlg('Error', 'Database already created!', mtWarning,[mbOk],0) ; //Database already created!
+               us_MessageDlg('错误', '数据库已存在！', mtWarning,[mbOk],0) ; //Database already created!
                db_create := False; // DB already exists
                Break;              // Exit nothing else to do
             end;
@@ -151,16 +151,26 @@ begin
      us_drop_mysql_database(dbName);              // Delete database
      display_databases;                           // Read databases from server and display
    end
-  else
+     else
    begin
      // No selection made inform user
-     us_MessageDlg('Error', 'No database selected!', mtWarning,[mbOk],0) ; //No database selected!
+     us_MessageDlg('错误', '未选择数据库！', mtWarning,[mbOk],0) ; //No database selected!
    end;
 end;
 
 procedure Tmysql_db_create_delete.FormShow(Sender: TObject);
 begin
-  mysql_db_create_delete.Caption := 'Create Delete '+US_MYMAR_TXT+' Database'; //Create Delete MySQL Database
+  // 汉化界面
+  mysql_db_create_delete.Caption := '创建删除 '+US_MYMAR_TXT+' 数据库';
+  GroupBox1.Caption := '创建数据库';
+  GroupBox2.Caption := '删除数据库';
+  GroupBox3.Caption := '清除输入/选择';
+  Label1.Caption := '输入要创建的数据库名称';
+  Label2.Caption := '选择要删除的数据库';
+  Create_btn.Caption := '创建数据库';
+  Delete_btn.Caption := '删除数据库';
+  Clear_btn.Caption := '清除输入和选择';
+  
   display_databases; //Display list of databases in ListBox1
 end;
 

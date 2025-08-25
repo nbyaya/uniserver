@@ -216,7 +216,7 @@ begin
      us_add_to_hosts_file(new_ServerName);                   // Add new host to hosts file
 
      //Inform user
-     us_MessageDlg('Apache Info','New Vhost created', mtcustom,[mbOk],0) ; //Display information message
+     us_MessageDlg('Apache 信息','新虚拟主机已创建', mtcustom,[mbOk],0) ; //Display information message
   end;//End valid_input
 
   If valid_input Then vhost_create.Close;
@@ -228,25 +228,25 @@ var
   str:string;
 begin
     str :='';
-    str := str + 'Document root is the full path to a folder.'         + sLineBreak + sLineBreak;
+    str := str + '文档根目录是文件夹的完整路径。'         + sLineBreak + sLineBreak;
 
-    str := str + 'You need to specify only the folder name.'           + sLineBreak+ sLineBreak;
+    str := str + '您只需要指定文件夹名称。'           + sLineBreak+ sLineBreak;
 
-    str := str + 'This folder name is added to the following folder path:'         + sLineBreak;
+    str := str + '此文件夹名称将添加到以下文件夹路径：'         + sLineBreak;
     str := str + ' '+ US_VHOSTS+'\' + sLineBreak;
-    str := str + 'Apache will serve a host website from this folder.'  + sLineBreak + sLineBreak;
+    str := str + 'Apache 将从此文件夹提供主机网站服务。'  + sLineBreak + sLineBreak;
 
-    str := str + 'Note 1:'  + sLineBreak;
-    str := str + 'For portability all Vhost root-folders are created in folder:'  + sLineBreak;
+    str := str + '注意 1：'  + sLineBreak;
+    str := str + '为了便携性，所有虚拟主机根文件夹都创建在文件夹中：'  + sLineBreak;
     str := str + ' '+ US_VHOSTS+'\' + sLineBreak + sLineBreak;
 
-    str := str + 'Note 2:'  + sLineBreak;
-    str := str + 'Alternatively for a fixed installation you can edit file:'  + sLineBreak;
+    str := str + '注意 2：'  + sLineBreak;
+    str := str + '或者，对于固定安装，您可以编辑文件：'  + sLineBreak;
     str := str +  USF_APACHE_VHOST_CNF  + sLineBreak;
-    str := str + 'Change DocumentRoot and Directory paths as required.';
+    str := str + '根据需要更改 DocumentRoot 和 Directory 路径。';
 
 
-   us_MessageDlg('Document Root', str, mtInformation,[mbOk],0) ; //Display message
+   us_MessageDlg('文档根目录', str, mtInformation,[mbOk],0) ; //Display message
 
 
 end;
@@ -256,22 +256,30 @@ var
    str:string;
 begin
   str := '';
-  str := str + 'Host name is the address you type into' + sLineBreak;
-  str := str + 'a browser, excluding the http:// part. ' + sLineBreak + sLineBreak;
+  str := str + '主机名是您在浏览器中输入的地址，' + sLineBreak;
+  str := str + '不包括 http:// 部分。' + sLineBreak + sLineBreak;
 
-  str := str + 'Example 1: ' + sLineBreak;
-  str := str + 'Full Internet address: http://www.me.com' + sLineBreak;
-  str := str + 'Host name: www.me.com' + sLineBreak + sLineBreak;
+  str := str + '示例 1：' + sLineBreak;
+  str := str + '完整互联网地址：http://www.me.com' + sLineBreak;
+  str := str + '主机名：www.me.com' + sLineBreak + sLineBreak;
 
-  str := str + 'Example 2' + sLineBreak;
-  str := str + 'Full Internet address: http://uniserver.com' + sLineBreak;
-  str := str + 'Host name: uniserver.com';
+  str := str + '示例 2：' + sLineBreak;
+  str := str + '完整互联网地址：http://uniserver.com' + sLineBreak;
+  str := str + '主机名：uniserver.com';
 
-  us_MessageDlg('Server Name - Host Name', str, mtInformation,[mbOk],0); //Display message
+  us_MessageDlg('服务器名称 - 主机名', str, mtInformation,[mbOk],0); //Display message
 end;
 
 procedure Tvhost_create.FormShow(Sender: TObject);
 begin
+   // 汉化界面
+   Caption := '创建 Apache 虚拟主机';
+   Label1.Caption := '根文件夹名称：';
+   Label2.Caption := '服务器名称：';
+   Label3.Caption := '例如：fred123';
+   Label4.Caption := '例如：fred.com';
+   Btn_create_vhost.Caption := '创建虚拟主机';
+   
    Edit_root_folder.Text :='';
    Edit_server_name.Text :='';
 end;
