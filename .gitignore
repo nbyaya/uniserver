@@ -1,0 +1,53 @@
+# 编译输出目录
+Bin/
+lib/
+*.o
+*.ppu
+*.compiled
+*.obj
+*.a
+
+# 可执行文件
+*.exe
+*.dll
+*.so
+
+# 调试文件
+*.dbg
+*.lps
+
+# 临时文件
+*.tmp
+*.log
+*.bak
+*.old
+*.backup
+
+# 编辑器临时文件
+*.orig
+*.rej
+*.swp
+*.swo
+*~
+*#
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# IDE配置
+.vs/
+.vscode/
+.idea/
+
+# 日志目录
+logs/
+tmp/
+temp/
+cache/
+
+# 发布目录
+dist/
+build/
+release/
+debug/
